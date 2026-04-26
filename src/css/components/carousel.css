@@ -1,5 +1,50 @@
-/*
- * carousel.css — Testimonial carousel
- * SEVER & ASOCIAȚII
- * (Populated fully in Phase 13)
- */
+/* carousel.css — Testimonial carousel */
+
+.carousel-container {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  width: 100%;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  opacity: 1;
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-sm);
+}
+
+.carousel-prev,
+.carousel-next {
+  background: none;
+  border: 1px solid var(--c-border);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--c-text);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+  background-color: var(--c-mist);
+  border-color: var(--c-mist);
+}
+
+.carousel-counter {
+  min-width: 40px;
+  text-align: center;
+}
