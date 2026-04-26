@@ -5,6 +5,11 @@
   padding-bottom: var(--section-v);
 }
 
+.cazuri-hero .hero-right {
+  display: flex;
+  align-items: flex-end;
+}
+
 .h-scroll-section {
   width: 100%;
   overflow: hidden;

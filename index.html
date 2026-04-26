@@ -59,7 +59,8 @@
     <!-- [S1] Hero -->
     <section class="section hero-home">
       <div class="hero-bg">
-        <video autoplay muted loop class="hero-video">
+        <img src="/images/hero_fallback_office.png" class="hero-fallback" alt="Interior cabinet avocatură">
+        <video autoplay muted loop playsinline class="hero-video">
           <source src="/videos/8061570-uhd_3840_2160_25fps.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
@@ -211,29 +212,32 @@
     <!-- [S7] Testimonials (carousel) -->
     <section class="section testimonials-section bg-cream">
       <div class="container">
-        <div class="carousel-container relative">
-          <div class="carousel-track flex overflow-hidden">
-            <div class="carousel-slide flex-shrink-0 w-full">
-              <h2 class="h-2 mb-md max-w-xl">"Andrei Sever a gestionat restructurarea juridică a companiei noastre cu o precizie remarcabilă. Fără surprize, fără întârzieri."</h2>
-              <div class="body-text text-muted">— Mihai P., CEO, grup de retail</div>
+        <div class="carousel-container">
+          <div class="carousel-track">
+            <div class="carousel-slide">
+              <p class="carousel-quote">"Andrei Sever a gestionat restructurarea juridică a companiei noastre cu o precizie remarcabilă. Fără surprize, fără întârzieri."</p>
+              <div class="carousel-author">— Mihai P., CEO, grup de retail</div>
             </div>
-            <div class="carousel-slide flex-shrink-0 w-full">
-              <h2 class="h-2 mb-md max-w-xl">"Am apelat la Elena Constantin pentru un litigiu imobiliar complicat. A rezolvat situația în 3 luni. Nu m-am așteptat la atât de repede."</h2>
-              <div class="body-text text-muted">— Dana L., investitor imobiliar</div>
+            <div class="carousel-slide">
+              <p class="carousel-quote">"Am apelat la Elena Constantin pentru un litigiu imobiliar complicat. A rezolvat situația în 3 luni. Nu m-am așteptat la atât de repede."</p>
+              <div class="carousel-author">— Dana L., investitor imobiliar</div>
             </div>
-            <div class="carousel-slide flex-shrink-0 w-full">
-              <h2 class="h-2 mb-md max-w-xl">"Cabinetul Sever & Asociații ne reprezintă interesele de 6 ani. Niciodată nu am simțit că suntem un client printre alții."</h2>
-              <div class="body-text text-muted">— Radu M., Director Resurse Umane</div>
+            <div class="carousel-slide">
+              <p class="carousel-quote">"Cabinetul Sever &amp; Asociații ne reprezintă interesele de 6 ani. Niciodată nu am simțit că suntem un client printre alții."</p>
+              <div class="carousel-author">— Radu M., Director Resurse Umane</div>
             </div>
           </div>
-          <div class="carousel-controls mt-lg flex align-center gap-md">
+          <div class="carousel-controls">
             <button class="carousel-prev" data-cursor aria-label="Înapoi">
-              <svg viewBox="0 0 24 24" fill="none" width="24" height="24"><path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="1.5"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" width="20" height="20"><path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="1.5"/></svg>
             </button>
-            <div class="carousel-counter label-small"><span class="current">01</span> / <span class="total">03</span></div>
+            <div class="carousel-counter"><span class="current">01</span> / <span class="total">03</span></div>
             <button class="carousel-next" data-cursor aria-label="Înainte">
-              <svg viewBox="0 0 24 24" fill="none" width="24" height="24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.5"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" width="20" height="20"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.5"/></svg>
             </button>
+          </div>
+          <div class="carousel-progress">
+            <div class="carousel-progress-bar"></div>
           </div>
         </div>
       </div>

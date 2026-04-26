@@ -1,5 +1,8 @@
-/* home.css — Home page specific styles (Phase 4) */
+/* home.css — Home page specific styles (Phase 4 / 13 / 14)
+ * SEVER & ASOCIAȚII
+ */
 
+/* ─── [S1] Hero ─── */
 .hero-home {
   position: relative;
   min-height: 100vh;
@@ -10,6 +13,7 @@
   color: var(--c-white);
 }
 
+/* ─── Hero background container ─── */
 .hero-bg {
   position: absolute;
   inset: 0;
@@ -18,34 +22,48 @@
   overflow: hidden;
 }
 
+/* ─── Phase 14: CSS-only fallback image with slow pan animation ─── */
+.hero-fallback {
+  position: absolute;
+  inset: 0;
+  width: 110%;
+  height: 110%;
+  object-fit: cover;
+  z-index: 0;
+  animation: heroPan 25s ease-in-out infinite alternate;
+}
+
+@keyframes heroPan {
+  0% {
+    transform: translate(0, 0) scale(1.05);
+  }
+  100% {
+    transform: translate(-5%, -3%) scale(1.1);
+  }
+}
+
+/* ─── Phase 14: Video background ─── */
 .hero-video {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 0;
+  z-index: 1;
 }
 
-.hero-fallback {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-
+/* ─── Dark overlay on hero (::after-like, separate div for z-index control) ─── */
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: var(--c-overlay);
-  z-index: 1;
+  z-index: 2;
 }
 
+/* ─── Hero text content ─── */
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   width: 100%;
 }
 
@@ -54,16 +72,39 @@
   opacity: 0.8;
 }
 
+/* ─── [S4] Stats ─── */
 .stats-section .stat-item {
   border-right: 1px solid var(--c-border);
-}
-.stats-section .stat-item:last-child {
-  border-right: none;
+  padding-inline: var(--gap-md);
 }
 
+.stats-section .stat-item:first-child {
+  padding-left: 0;
+}
+
+.stats-section .stat-item:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+/* ─── [S5] About preview image ─── */
 .about-img {
   width: 100%;
   aspect-ratio: 4/5;
+}
+
+/* ─── [S6] Featured case ─── */
+.featured-case .case-image-wrapper {
+  border-radius: 4px;
+}
+
+.featured-case .parallax-img {
+  will-change: transform;
+}
+
+/* ─── [S7] Testimonials section ─── */
+.testimonials-section {
+  overflow: hidden;
 }
 
 .bg-cream {
@@ -71,7 +112,7 @@
   color: var(--c-black);
 }
 
-/* Utilities for layout */
+/* ─── Layout utilities ─── */
 .align-center { align-items: center; }
 .text-center { text-align: center; }
 .pl-md { padding-left: var(--gap-md); }
@@ -101,3 +142,58 @@
 .relative { position: relative; }
 .flex-shrink-0 { flex-shrink: 0; }
 .h-60vh { height: 60vh; }
+
+/* ─── Grid-4 for stats ─── */
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap-md);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .hero-home {
+    align-items: flex-end;
+    padding-bottom: calc(var(--section-v) * 0.6);
+  }
+
+  .stats-section .stat-item {
+    border-right: none;
+    border-bottom: 1px solid var(--c-border);
+    padding-block: var(--gap-sm);
+    padding-inline: 0;
+  }
+
+  .stats-section .stat-item:last-child {
+    border-bottom: none;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .h-60vh {
+    height: 40vh;
+  }
+
+  .featured-case .case-meta {
+    flex-direction: column;
+    gap: var(--gap-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Reduced motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  .hero-fallback {
+    animation: none;
+    width: 100%;
+    height: 100%;
+    transform: none;
+  }
+}
