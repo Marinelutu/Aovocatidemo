@@ -94,3 +94,14 @@
   white-space: nowrap;
   border-width: 0;
 }
+
+/* ─── Page transition overlay ─── */
+#page-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--c-black);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  z-index: 9999;
+  pointer-events: none;
+}
