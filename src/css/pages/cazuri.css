@@ -64,3 +64,29 @@
   border-top: 1px solid var(--c-border);
   width: 100%;
 }
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .cazuri-hero .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .h-panel {
+    width: 320px;
+  }
+
+  .case-card {
+    padding: var(--gap-sm);
+  }
+}
+
+/* ─── Reduced motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  .case-card {
+    transition: none;
+  }
+  .case-card:hover {
+    transform: none;
+  }
+}
+

@@ -60,19 +60,29 @@
   margin-bottom: var(--gap-md);
 }
 .process-step .step-num {
-  color: var(--c-grey);
+  color: var(--c-text-muted);
 }
 
+/* ─── SVG decorative line between process steps ─── */
 .step-line {
   width: 100%;
   height: 20px;
   margin-bottom: var(--gap-md);
+  overflow: visible;
 }
 .step-line path {
   fill: none;
-  stroke: var(--c-grey);
+  stroke: var(--c-mist);
   stroke-width: 1;
-  stroke-dasharray: 4,4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ─── Sticky column for "Ce facem" sections ─── */
+.sticky-col {
+  position: sticky;
+  top: 120px;
+  align-self: start;
 }
 
 .stats-section .container {
@@ -86,11 +96,15 @@
   margin-bottom: var(--gap-md);
 }
 .cases-list {
-  border-top: 1px solid var(--c-grey);
+  border-top: 1px solid var(--c-border);
 }
 .case-brief {
   padding: var(--gap-md) 0;
-  border-bottom: 1px solid var(--c-grey);
+  border-bottom: 1px solid var(--c-border);
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+.case-brief:hover {
+  transform: translateX(8px);
 }
 
 .cta-section {
@@ -101,3 +115,17 @@
 .cta-section .h-2 {
   margin-bottom: var(--gap-md);
 }
+
+/* ─── Reduced motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  .card-practice {
+    transition: none;
+  }
+  .case-brief {
+    transition: none;
+  }
+  .case-brief:hover {
+    transform: none;
+  }
+}
+

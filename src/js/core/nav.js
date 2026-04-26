@@ -121,6 +121,28 @@ function initNav() {
     }
     window.addEventListener('scroll', onFirstScroll, { passive: true });
   }
+
+  /* ─── 7. Footer entrance animation — stagger fade-in (Phase 15) ─── */
+  if (!prefersReduced) {
+    const footerCols = document.querySelectorAll('.footer-nav-col, .footer-brand');
+    if (footerCols.length > 0) {
+      gsap.set(footerCols, { opacity: 0, y: 30 });
+      ScrollTrigger.create({
+        trigger: '.site-footer',
+        start: 'top 85%',
+        once: true,
+        onEnter: () => {
+          gsap.to(footerCols, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: 'power3.out',
+            stagger: 0.12,
+          });
+        },
+      });
+    }
+  }
 }
 
 // Initialize on DOM ready

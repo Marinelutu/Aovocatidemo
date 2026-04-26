@@ -112,37 +112,6 @@
   color: var(--c-black);
 }
 
-/* ─── Layout utilities ─── */
-.align-center { align-items: center; }
-.text-center { text-align: center; }
-.pl-md { padding-left: var(--gap-md); }
-.mt-xs { margin-top: var(--gap-xs); }
-.mt-sm { margin-top: var(--gap-sm); }
-.mt-md { margin-top: var(--gap-md); }
-.mt-lg { margin-top: var(--gap-lg); }
-.mb-xs { margin-bottom: var(--gap-xs); }
-.mb-sm { margin-bottom: var(--gap-sm); }
-.mb-md { margin-bottom: var(--gap-md); }
-.mb-lg { margin-bottom: var(--gap-lg); }
-.mb-xl { margin-bottom: var(--gap-xl); }
-.pt-xl { padding-top: var(--gap-xl); }
-.pb-xl { padding-bottom: var(--gap-xl); }
-.pt-xxl { padding-top: calc(var(--gap-xl) * 1.5); }
-.pb-xxl { padding-bottom: calc(var(--gap-xl) * 1.5); }
-
-.flex { display: flex; }
-.col { flex-direction: column; }
-.gap-md { gap: var(--gap-md); }
-.max-w-lg { max-width: 800px; }
-.max-w-xl { max-width: 1000px; }
-.w-full { width: 100%; }
-.h-full { height: 100%; }
-.object-cover { object-fit: cover; }
-.overflow-hidden { overflow: hidden; }
-.relative { position: relative; }
-.flex-shrink-0 { flex-shrink: 0; }
-.h-60vh { height: 60vh; }
-
 /* ─── Grid-4 for stats ─── */
 .grid-4 {
   display: grid;
