@@ -8,9 +8,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/assets/transitions-BO2Lo-Fo.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/transitions-O6hIq0XL.css">
-  <link rel="stylesheet" crossorigin href="/assets/main-tn0RQdqM.css">
+  <script type="module" crossorigin src="/assets/main-Cd1zgcjo.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/text-reveal-LB8Cphbf.js">
+  <link rel="modulepreload" crossorigin href="/assets/image-mask-BljxUCkU.js">
+  <link rel="modulepreload" crossorigin href="/assets/counters-BswJ8zC-.js">
+  <link rel="modulepreload" crossorigin href="/assets/parallax-BBXJ2MDv.js">
+  <link rel="stylesheet" crossorigin href="/assets/text-reveal-DgEGA9h5.css">
+  <link rel="stylesheet" crossorigin href="/assets/main-2pbrjI2S.css">
+  <link rel="stylesheet" crossorigin href="/assets/cards-1S0YHkgm.css">
 </head>
 <body data-page="home">
 
@@ -31,7 +36,7 @@
 
   <!-- Navigation -->
   <nav id="nav-island" role="navigation" aria-label="Navigare principală">
-    <div class="nav-logo">S&amp;A</div>
+    <div class="nav-logo"><a href="/" data-scramble>S&amp;A</a></div>
     <ul class="nav-links">
       <li><a href="/despre.html" data-scramble>Despre</a></li>
       <li><a href="/practici.html" data-scramble>Practici</a></li>
@@ -39,11 +44,217 @@
       <li><a href="/contact.html" data-scramble>Contact</a></li>
     </ul>
     <button class="nav-cta" data-cursor aria-label="Solicită o consultație">Consultație</button>
+    <button class="nav-hamburger" aria-label="Meniu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
 
   <!-- Page content -->
   <main>
-    <!-- Sections populated in Phase 4 -->
+    <!-- [S1] Hero -->
+    <section class="section hero-home">
+      <div class="hero-bg">
+        <video autoplay muted loop class="hero-video">
+          <source src="/videos/8061570-uhd_3840_2160_25fps.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="container hero-content">
+        <div class="hero-label label-small">CABINET DE AVOCATURĂ — IAȘI, ROMÂNIA</div>
+        <h1 class="h-display text-reveal">
+          Drept.<br>
+          Fără<br>
+          compromisuri.
+        </h1>
+        <p class="h-sub text-reveal mt-sm">
+          Sever & Asociații reprezintă interesele<br>
+          dumneavoastră cu precizie și fără excepții.
+        </p>
+        <div class="mt-md">
+          <a href="/contact.html" class="btn-primary" data-cursor>
+            <span>Solicită o consultație →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- [S2] Statement -->
+    <section class="section section--dark pin-section pt-xl pb-xl">
+      <div class="container">
+        <h2 class="h-1 text-reveal text-center">
+          Unii avocați vă promit victorii.<br>
+          Noi vă pregătim pentru orice scenariu.
+        </h2>
+      </div>
+    </section>
+
+    <!-- [S3] Practice areas -->
+    <section class="section">
+      <div class="container">
+        <div class="label-small mb-lg">ARII DE PRACTICĂ</div>
+        <div class="grid-3 cards-grid">
+          
+          <a href="/practici/corporativ.html" class="card-practice" data-cursor>
+            <div class="img-mask mb-sm">
+              <img src="/images/practice_corporate.png" class="img-inner" alt="Drept Corporativ" loading="lazy">
+            </div>
+            <h3 class="h-3 mb-xs">Drept Corporativ</h3>
+            <p class="body-text mb-sm">Structuri legale care rezistă presiunii.<br>Contracte, fuziuni, guvernanță corporativă.</p>
+            <div class="card-stat label-small text-muted">
+              <span class="counter" data-target="120" data-suffix="+">0</span> companii reprezentate
+            </div>
+          </a>
+
+          <a href="/practici/imobiliar.html" class="card-practice" data-cursor>
+            <div class="img-mask mb-sm">
+              <img src="/images/practice_real_estate.png" class="img-inner" alt="Drept Imobiliar" loading="lazy">
+            </div>
+            <h3 class="h-3 mb-xs">Drept Imobiliar</h3>
+            <p class="body-text mb-sm">Fiecare proprietate are un risc ascuns.<br>Due diligence, tranzacții, litigii imobiliare.</p>
+            <div class="card-stat label-small text-muted">
+              <span class="counter" data-target="85" data-suffix="M €">0</span> în tranzacții gestionate
+            </div>
+          </a>
+
+          <a href="/practici/munca.html" class="card-practice" data-cursor>
+            <div class="img-mask mb-sm">
+              <img src="/images/practice_employment.png" class="img-inner" alt="Dreptul Muncii" loading="lazy">
+            </div>
+            <h3 class="h-3 mb-xs">Dreptul Muncii</h3>
+            <p class="body-text mb-sm">Relațiile de muncă au regulile lor.<br>Contracte individuale, concedieri, litigii.</p>
+            <div class="card-stat label-small text-muted">
+              <span class="counter" data-target="300" data-suffix="+">0</span> dosare soluționate
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- [S4] Numbers -->
+    <section class="section section--dark stats-section">
+      <div class="container">
+        <div class="label-small mb-lg text-center">ÎN CIFRE</div>
+        <div class="grid-4 text-center">
+          <div class="stat-item">
+            <div class="h-1 mb-xs"><span class="counter" data-target="14">0</span></div>
+            <div class="body-text">Ani de practică</div>
+          </div>
+          <div class="stat-item">
+            <div class="h-1 mb-xs"><span class="counter" data-target="120" data-suffix="+">0</span></div>
+            <div class="body-text">Companii cliente</div>
+          </div>
+          <div class="stat-item">
+            <div class="h-1 mb-xs"><span class="counter" data-target="98" data-suffix="%">0</span></div>
+            <div class="body-text">Cazuri soluționate favorabil</div>
+          </div>
+          <div class="stat-item">
+            <div class="h-1 mb-xs"><span class="counter" data-target="2">0</span></div>
+            <div class="body-text">Avocați. Toată atenția pentru dumneavoastră.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [S5] About Preview -->
+    <section class="section pin-section about-preview">
+      <div class="container grid-2 align-center">
+        <div class="about-img">
+          <div class="img-mask">
+            <img src="/images/lawyers_portrait.png" class="img-inner" alt="Andrei Sever și Elena Constantin" loading="lazy">
+          </div>
+        </div>
+        <div class="about-text pl-md">
+          <div class="label-small mb-sm">CABINET BOUTIQUE</div>
+          <h2 class="h-1 text-reveal mb-md">
+            Doi avocați.<br>
+            Nicio delegare.
+          </h2>
+          <p class="body-text text-reveal mb-lg">
+            Andrei Sever și Elena Constantin gestionează<br>
+            personal fiecare dosar. Nu există intermediari.<br>
+            Nu există asociați juniori.
+          </p>
+          <a href="/despre.html" class="btn-secondary text-reveal" data-cursor>
+            <span>Cunoaște-ne →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- [S6] Featured Case -->
+    <section class="section featured-case">
+      <div class="container">
+        <div class="label-small mb-sm">CAZ RECENT</div>
+        <h2 class="h-2 mb-md max-w-lg">
+          Restructurarea unui grup de 12 companii<br>
+          în 90 de zile.
+        </h2>
+        <div class="case-meta mb-lg flex gap-md">
+          <span class="label-small text-muted">DREPT CORPORATIV</span>
+          <span class="body-text text-muted">— Finalizat fără litigii</span>
+        </div>
+        <a href="/cazuri.html" class="btn-secondary mb-xl" data-cursor>
+          <span>Toate cazurile →</span>
+        </a>
+      </div>
+      <div class="case-image-wrapper mt-md overflow-hidden h-60vh">
+        <img src="/images/featured_case.png" alt="Caz recent" data-speed="0.7" class="parallax-img w-full h-full object-cover" loading="lazy">
+      </div>
+    </section>
+
+    <!-- [S7] Testimonials (carousel) -->
+    <section class="section testimonials-section bg-cream">
+      <div class="container">
+        <div class="carousel-container relative">
+          <div class="carousel-track flex overflow-hidden">
+            <div class="carousel-slide flex-shrink-0 w-full">
+              <h2 class="h-2 mb-md max-w-xl">"Andrei Sever a gestionat restructurarea juridică a companiei noastre cu o precizie remarcabilă. Fără surprize, fără întârzieri."</h2>
+              <div class="body-text text-muted">— Mihai P., CEO, grup de retail</div>
+            </div>
+            <div class="carousel-slide flex-shrink-0 w-full">
+              <h2 class="h-2 mb-md max-w-xl">"Am apelat la Elena Constantin pentru un litigiu imobiliar complicat. A rezolvat situația în 3 luni. Nu m-am așteptat la atât de repede."</h2>
+              <div class="body-text text-muted">— Dana L., investitor imobiliar</div>
+            </div>
+            <div class="carousel-slide flex-shrink-0 w-full">
+              <h2 class="h-2 mb-md max-w-xl">"Cabinetul Sever & Asociații ne reprezintă interesele de 6 ani. Niciodată nu am simțit că suntem un client printre alții."</h2>
+              <div class="body-text text-muted">— Radu M., Director Resurse Umane</div>
+            </div>
+          </div>
+          <div class="carousel-controls mt-lg flex align-center gap-md">
+            <button class="carousel-prev" data-cursor aria-label="Înapoi">
+              <svg viewBox="0 0 24 24" fill="none" width="24" height="24"><path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="1.5"/></svg>
+            </button>
+            <div class="carousel-counter label-small"><span class="current">01</span> / <span class="total">03</span></div>
+            <button class="carousel-next" data-cursor aria-label="Înainte">
+              <svg viewBox="0 0 24 24" fill="none" width="24" height="24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.5"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [S8] CTA -->
+    <section class="section section--dark cta-section text-center pt-xxl pb-xxl">
+      <div class="container flex col align-center">
+        <h2 class="h-1 mb-md">
+          Primul pas<br>
+          este o conversație.
+        </h2>
+        <p class="h-sub mb-lg text-muted">
+          Programați o consultație inițială.<br>
+          Fără angajamente. Fără costuri ascunse.
+        </p>
+        <div class="mb-sm">
+          <a href="/contact.html" class="btn-primary" data-cursor>
+            <span>Consultație inițială →</span>
+          </a>
+        </div>
+        <div class="label-small text-muted mt-sm">Răspundem în maximum 24 de ore.</div>
+      </div>
+    </section>
   </main>
 
   <!-- Footer -->

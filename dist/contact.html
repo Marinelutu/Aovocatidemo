@@ -8,9 +8,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/assets/transitions-BO2Lo-Fo.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/transitions-O6hIq0XL.css">
-  <link rel="stylesheet" crossorigin href="/assets/main-tn0RQdqM.css">
+  <script type="module" crossorigin src="/assets/contact-DS7t7Jih.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/text-reveal-LB8Cphbf.js">
+  <link rel="stylesheet" crossorigin href="/assets/text-reveal-DgEGA9h5.css">
+  <link rel="stylesheet" crossorigin href="/assets/contact-DK8mrs5L.css">
 </head>
 <body data-page="contact">
 
@@ -23,7 +24,7 @@
 
   <!-- Navigation -->
   <nav id="nav-island" role="navigation" aria-label="Navigare principală">
-    <div class="nav-logo">S&amp;A</div>
+    <div class="nav-logo"><a href="/" data-scramble>S&amp;A</a></div>
     <ul class="nav-links">
       <li><a href="/despre.html" data-scramble>Despre</a></li>
       <li><a href="/practici.html" data-scramble>Practici</a></li>
@@ -31,11 +32,107 @@
       <li><a href="/contact.html" data-scramble>Contact</a></li>
     </ul>
     <button class="nav-cta" data-cursor aria-label="Solicită o consultație">Consultație</button>
+    <button class="nav-hamburger" aria-label="Meniu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
 
   <!-- Page content -->
   <main>
-    <!-- Sections populated in Phase 11 -->
+    <!-- [S1] Hero -->
+    <section class="section contact-hero">
+      <div class="container">
+        <div class="label-small reveal-text">CONTACT</div>
+        <h1 class="h-display reveal-text">Primul pas<br>este o<br>conversație.</h1>
+      </div>
+    </section>
+
+    <!-- [S2] Two-column layout -->
+    <section class="section padding-v">
+      <div class="container contact-grid">
+        <!-- LEFT: Form -->
+        <div class="contact-form-col reveal-text">
+          <form id="contact-form" novalidate>
+            <div class="field-group">
+              <label for="name">Nume complet</label>
+              <input type="text" id="name" name="name" required autocomplete="name">
+              <span class="field-error">Câmp obligatoriu.</span>
+            </div>
+            <div class="field-group">
+              <label for="email">Adresă de email</label>
+              <input type="email" id="email" name="email" required autocomplete="email">
+              <span class="field-error">Introduceți o adresă validă.</span>
+            </div>
+            <div class="field-group">
+              <label for="phone">Telefon</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel">
+            </div>
+            <div class="field-group">
+              <label for="area">Arie de practică</label>
+              <select id="area" name="area">
+                <option value="">Selectați...</option>
+                <option value="corporate">Drept Corporativ</option>
+                <option value="imobiliar">Drept Imobiliar</option>
+                <option value="munca">Dreptul Muncii</option>
+                <option value="altele">Altele</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label for="message">Mesaj</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+              <span class="field-error">Câmp obligatoriu.</span>
+            </div>
+            <button type="submit" class="btn-primary" data-cursor>
+              <span>Trimite mesajul &rarr;</span>
+            </button>
+          </form>
+          <div id="form-success" hidden>
+            <p class="body-text">Mesajul a fost trimis. Vă vom contacta în cel mai scurt timp.</p>
+          </div>
+        </div>
+
+        <!-- RIGHT: Contact info + map -->
+        <div class="contact-info-col reveal-text">
+          <div class="contact-info-block">
+            <span class="label-small">CABINET</span>
+            <p class="body-text">
+              Str. Unirii nr. 12, et. 3<br>
+              700082 Iași, România
+            </p>
+          </div>
+          <div class="contact-info-block">
+            <span class="label-small">PROGRAM</span>
+            <p class="body-text">
+              Luni–Vineri: 09:00–18:00<br>
+              Sâmbătă: prin programare
+            </p>
+          </div>
+          <div class="contact-info-block">
+            <span class="label-small">CONTACT DIRECT</span>
+            <p class="body-text">
+              <a href="tel:+40721000000">+40 721 000 000</a><br>
+              <a href="mailto:office@severasociati.ro">office@severasociati.ro</a>
+            </p>
+          </div>
+          <div class="contact-info-block">
+            <span class="label-small">RĂSPUNS GARANTAT</span>
+            <p class="body-text">
+              Răspundem la orice solicitare<br>
+              în maximum 24 de ore.
+            </p>
+          </div>
+          
+          <div class="map-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- Footer -->

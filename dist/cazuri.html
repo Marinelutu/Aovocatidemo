@@ -8,9 +8,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/assets/transitions-BO2Lo-Fo.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/transitions-O6hIq0XL.css">
-  <link rel="stylesheet" crossorigin href="/assets/main-tn0RQdqM.css">
+  <script type="module" crossorigin src="/assets/cazuri-BiN-uNgN.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/text-reveal-LB8Cphbf.js">
+  <link rel="stylesheet" crossorigin href="/assets/text-reveal-DgEGA9h5.css">
+  <link rel="stylesheet" crossorigin href="/assets/cazuri-DGkAE4x1.css">
+  <link rel="stylesheet" crossorigin href="/assets/cards-1S0YHkgm.css">
 </head>
 <body data-page="cazuri">
 
@@ -31,7 +33,7 @@
 
   <!-- Navigation -->
   <nav id="nav-island" role="navigation" aria-label="Navigare principală">
-    <div class="nav-logo">S&amp;A</div>
+    <div class="nav-logo"><a href="/" data-scramble>S&amp;A</a></div>
     <ul class="nav-links">
       <li><a href="/despre.html" data-scramble>Despre</a></li>
       <li><a href="/practici.html" data-scramble>Practici</a></li>
@@ -39,11 +41,100 @@
       <li><a href="/contact.html" data-scramble>Contact</a></li>
     </ul>
     <button class="nav-cta" data-cursor aria-label="Solicită o consultație">Consultație</button>
+    <button class="nav-hamburger" aria-label="Meniu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
 
   <!-- Page content -->
   <main>
-    <!-- Sections populated in Phase 10 -->
+    <!-- [S1] Hero -->
+    <section class="section cazuri-hero">
+      <div class="container grid-2">
+        <div class="hero-left">
+          <div class="label-small reveal-text">CAZURI &amp; REZULTATE</div>
+          <h1 class="h-display reveal-text">Rezultatele<br>vorbesc.</h1>
+        </div>
+        <div class="hero-right" style="display: flex; align-items: flex-end;">
+          <p class="body-text reveal-text">
+            Nu publicăm cazuri pentru a impresiona.<br>
+            Le publicăm pentru a fi transparenți<br>
+            în privința tipului de muncă pe care<br>
+            îl facem.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- [S2] Horizontal scroll gallery -->
+    <section class="h-scroll-section">
+      <div class="h-scroll-track">
+        <!-- CARD 1 -->
+        <div class="h-panel case-card">
+          <div class="case-card-inner">
+            <div class="label-small case-category">DREPT CORPORATIV</div>
+            <h3 class="h-3 case-title">Restructurarea unui grup de 12 societăți</h3>
+            <p class="body-text case-detail">3 luni. Zero litigii. 100% conformitate.</p>
+            <div class="label-small case-year">2024</div>
+          </div>
+        </div>
+        <!-- CARD 2 -->
+        <div class="h-panel case-card">
+          <div class="case-card-inner">
+            <div class="label-small case-category">DREPT IMOBILIAR</div>
+            <h3 class="h-3 case-title">Due diligence pentru complex rezidențial</h3>
+            <p class="body-text case-detail">14 titluri de proprietate verificate.<br>4 riscuri majore identificate și eliminate.</p>
+            <div class="label-small case-year">2024</div>
+          </div>
+        </div>
+        <!-- CARD 3 -->
+        <div class="h-panel case-card">
+          <div class="case-card-inner">
+            <div class="label-small case-category">DREPTUL MUNCII</div>
+            <h3 class="h-3 case-title">Concediere colectivă — 47 angajați</h3>
+            <p class="body-text case-detail">Procedură conformă. Zero contestații.</p>
+            <div class="label-small case-year">2023</div>
+          </div>
+        </div>
+        <!-- CARD 4 -->
+        <div class="h-panel case-card">
+          <div class="case-card-inner">
+            <div class="label-small case-category">DREPT CORPORATIV</div>
+            <h3 class="h-3 case-title">Contract de distribuție exclusivă 4M €</h3>
+            <p class="body-text case-detail">Negociat în 6 săptămâni. Implementat<br>în 3 piețe internaționale.</p>
+            <div class="label-small case-year">2023</div>
+          </div>
+        </div>
+        <!-- CARD 5 -->
+        <div class="h-panel case-card">
+          <div class="case-card-inner">
+            <div class="label-small case-category">DREPT IMOBILIAR</div>
+            <h3 class="h-3 case-title">Litigiu vicii ascunse 1.2M €</h3>
+            <p class="body-text case-detail">Câștig în primă instanță. Confirmat în apel.</p>
+            <div class="label-small case-year">2022</div>
+          </div>
+        </div>
+        <!-- CARD 6 -->
+        <div class="h-panel case-card">
+          <div class="case-card-inner">
+            <div class="label-small case-category">DREPTUL MUNCII</div>
+            <h3 class="h-3 case-title">Implementare politici HR + GDPR</h3>
+            <p class="body-text case-detail">3 companii. Regulamente interne complete.<br>Zero sancțiuni ANSPDCP.</p>
+            <div class="label-small case-year">2022</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [S3] CTA -->
+    <section class="section section--dark cta-section">
+      <div class="container">
+        <h2 class="h-2 reveal-text cta-title">Adăugăm dosarul dumneavoastră la această listă.</h2>
+        <a href="/contact.html" class="btn btn-primary reveal-text">Consultație inițială &rarr;</a>
+      </div>
+    </section>
   </main>
 
   <!-- Footer -->

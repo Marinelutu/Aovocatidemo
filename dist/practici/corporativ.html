@@ -8,10 +8,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/assets/transitions-BO2Lo-Fo.js"></script>
-  <script type="module" crossorigin src="/assets/practici-D_6kAle5.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/transitions-O6hIq0XL.css">
-  <link rel="stylesheet" crossorigin href="/assets/main-tn0RQdqM.css">
+  <script type="module" crossorigin src="/assets/text-reveal-LB8Cphbf.js"></script>
+  <script type="module" crossorigin src="/assets/image-mask-BljxUCkU.js"></script>
+  <script type="module" crossorigin src="/assets/counters-BswJ8zC-.js"></script>
+  <script type="module" crossorigin src="/assets/practici-B4FqjJAt.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/text-reveal-DgEGA9h5.css">
+  <link rel="stylesheet" crossorigin href="/assets/practici-CNyGZwNX.css">
+  <link rel="stylesheet" crossorigin href="/assets/cards-1S0YHkgm.css">
 </head>
 <body data-page="corporativ">
 
@@ -24,7 +27,7 @@
 
   <!-- Navigation -->
   <nav id="nav-island" role="navigation" aria-label="Navigare principală">
-    <div class="nav-logo">S&amp;A</div>
+    <div class="nav-logo"><a href="/" data-scramble>S&amp;A</a></div>
     <ul class="nav-links">
       <li><a href="/despre.html" data-scramble>Despre</a></li>
       <li><a href="/practici.html" data-scramble>Practici</a></li>
@@ -32,11 +35,123 @@
       <li><a href="/contact.html" data-scramble>Contact</a></li>
     </ul>
     <button class="nav-cta" data-cursor aria-label="Solicită o consultație">Consultație</button>
+    <button class="nav-hamburger" aria-label="Meniu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
 
   <!-- Page content -->
   <main>
-    <!-- Sections populated in Phase 7 -->
+    <!-- [S1] Hero -->
+    <section class="section practici-hero">
+      <div class="container">
+        <div class="label-small reveal-text">DREPT CORPORATIV</div>
+        <h1 class="h-display reveal-text">Structuri legale<br>care rezistă<br>presiunii.</h1>
+      </div>
+      <div class="img-mask hero-image-wrapper">
+        <img src="/images/corporate-law.png" alt="Arhitectură corporativă" />
+      </div>
+    </section>
+
+    <!-- [S2] What we do (sticky pin) -->
+    <section class="section section--dark padding-v">
+      <div class="container grid-2">
+        <div class="sticky-col" data-pin>
+          <h2 class="h-2 reveal-text">Ce facem.</h2>
+        </div>
+        <div class="scroll-col">
+          <ul class="practice-list body-text reveal-text">
+            <li>— Înființare și restructurare societăți</li>
+            <li>— Contracte comerciale și negociere</li>
+            <li>— Fuziuni și achiziții (M&A)</li>
+            <li>— Guvernanță corporativă</li>
+            <li>— Litigii comerciale și arbitraj</li>
+            <li>— Conformitate și reglementări</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- [S3] Process -->
+    <section class="section">
+      <div class="container">
+        <div class="label-small reveal-text process-section-title">CUM LUCRĂM</div>
+        <div class="process-steps">
+          <div class="process-step reveal-text">
+            <div class="step-num label-small">01</div>
+            <h3 class="h-3">Analiză inițială</h3>
+            <p class="body-text">Înțelegem structura actuală și riscurile existente.</p>
+          </div>
+          <svg class="step-line" viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M0,10 L100,10" /></svg>
+          
+          <div class="process-step reveal-text">
+            <div class="step-num label-small">02</div>
+            <h3 class="h-3">Strategie</h3>
+            <p class="body-text">Propunem soluția juridică optimă, cu variante.</p>
+          </div>
+          <svg class="step-line" viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M0,10 L100,10" /></svg>
+
+          <div class="process-step reveal-text">
+            <div class="step-num label-small">03</div>
+            <h3 class="h-3">Implementare</h3>
+            <p class="body-text">Redactăm, negociem, reprezentăm.</p>
+          </div>
+          <svg class="step-line" viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M0,10 L100,10" /></svg>
+
+          <div class="process-step reveal-text">
+            <div class="step-num label-small">04</div>
+            <h3 class="h-3">Monitorizare</h3>
+            <p class="body-text">Rămânem alături pe toată durata relației.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [S4] Stats -->
+    <section class="section stats-section">
+      <div class="container grid-3">
+        <div class="stat-item reveal-text">
+          <div class="h-1 stat-num" data-target="120" data-suffix="+">0</div>
+          <div class="body-text">Companii reprezentate</div>
+        </div>
+        <div class="stat-item reveal-text">
+          <div class="h-1 stat-num" data-target="14">0</div>
+          <div class="body-text">Ani experiență corporativă</div>
+        </div>
+        <div class="stat-item reveal-text">
+          <div class="h-1 stat-num" data-target="8">0</div>
+          <div class="body-text">Tranzacții M&A finalizate</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [S5] Relevant cases -->
+    <section class="section">
+      <div class="container">
+        <div class="label-small reveal-text cases-section-title">CAZURI RELEVANTE</div>
+        <div class="cases-list">
+          <div class="case-brief reveal-text">
+            <h3 class="h-3">Restructurarea unui grup de 12 societăți</h3>
+          </div>
+          <div class="case-brief reveal-text">
+            <h3 class="h-3">Negocierea unui contract de distribuție de 4M €</h3>
+          </div>
+          <div class="case-brief reveal-text">
+            <h3 class="h-3">Reprezentare în arbitraj ICSID</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [S6] CTA -->
+    <section class="section section--dark cta-section">
+      <div class="container">
+        <h2 class="h-2 reveal-text cta-title">Discutăm structura dumneavoastră juridică.</h2>
+        <a href="/contact.html" class="btn btn-primary reveal-text">Solicită o consultație &rarr;</a>
+      </div>
+    </section>
   </main>
 
   <!-- Footer -->
