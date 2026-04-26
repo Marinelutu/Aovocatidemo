@@ -100,3 +100,4 @@
 .overflow-hidden { overflow: hidden; }
 .relative { position: relative; }
 .flex-shrink-0 { flex-shrink: 0; }
+.h-60vh { height: 60vh; }

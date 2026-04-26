@@ -1,7 +1,9 @@
-/**
- * practici.js — Practice areas page animations
- * SEVER & ASOCIAȚII
- * (Populated fully in Phase 6)
- */
+import { initTextReveal } from '../animations/text-reveal.js';
+import { initImageMask } from '../animations/image-mask.js';
 
-// export {}; — placeholder
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    initTextReveal('.reveal-text');
+    initImageMask('.img-mask');
+  }, 200);
+});

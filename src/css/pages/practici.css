@@ -1,1 +1,26 @@
-/* practici.css — Practice areas page specific styles (Phase 6) */
+/* practici.css */
+.practici-hero {
+  padding-top: calc(var(--section-v) + 80px);
+  padding-bottom: var(--section-v);
+}
+.practici-hero .h-display {
+  margin-top: var(--gap-md);
+  margin-bottom: var(--gap-xl);
+}
+
+.card-practice {
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+@media (hover: hover) {
+  .card-practice:hover {
+    transform: scale(1.03);
+  }
+}
+
+@media (max-width: 768px) {
+  .practici-grid {
+    grid-template-columns: 1fr;
+    gap: var(--gap-xl);
+  }
+}
