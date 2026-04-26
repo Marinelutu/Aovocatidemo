@@ -1,5 +1,139 @@
 /*
  * buttons.css — Button components
  * SEVER & ASOCIAȚII
- * (Populated fully in Phase 3)
  */
+
+/* ─── Shared button reset ─── */
+.btn-primary,
+.btn-secondary,
+.btn-tertiary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--f-body);
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  background: none;
+  padding: 0;
+  position: relative;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+/* ─── Primary: bordered pill ─── */
+.btn-primary {
+  font-size: var(--t-small);
+  letter-spacing: 0.04em;
+  color: var(--c-black);
+  border: 1px solid var(--c-black);
+  border-radius: 100px;
+  padding: 14px 32px;
+  background: transparent;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background-color: var(--c-black);
+  color: var(--c-white);
+}
+
+.btn-primary {
+  transition: background-color var(--dur-fast) var(--ease-out),
+              color var(--dur-fast) var(--ease-out);
+}
+
+/* Primary on dark background */
+.section--dark .btn-primary {
+  color: var(--c-white);
+  border-color: var(--c-white);
+}
+
+.section--dark .btn-primary:hover,
+.section--dark .btn-primary:focus-visible {
+  background-color: var(--c-white);
+  color: var(--c-black);
+}
+
+/* ─── Secondary: text with underline draw ─── */
+.btn-secondary {
+  font-size: var(--t-body);
+  color: var(--c-text);
+  letter-spacing: 0;
+}
+
+.btn-secondary::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition: width var(--dur-mid) var(--ease-out);
+}
+
+.btn-secondary:hover::after,
+.btn-secondary:focus-visible::after {
+  width: 100%;
+}
+
+.section--dark .btn-secondary {
+  color: var(--c-white);
+}
+
+/* ─── Tertiary: small muted link ─── */
+.btn-tertiary {
+  font-size: var(--t-small);
+  color: var(--c-text-muted);
+  letter-spacing: 0.02em;
+}
+
+.btn-tertiary::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition: width var(--dur-mid) var(--ease-out);
+}
+
+.btn-tertiary:hover::after,
+.btn-tertiary:focus-visible::after {
+  width: 100%;
+}
+
+.btn-tertiary:hover {
+  color: var(--c-text);
+}
+
+/* ─── Arrow icon inside buttons ─── */
+.btn-arrow {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.btn-primary:hover .btn-arrow,
+.btn-secondary:hover .btn-arrow,
+.btn-tertiary:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* ─── Reduced motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary,
+  .btn-secondary,
+  .btn-tertiary {
+    transition: none;
+  }
+  .btn-secondary::after,
+  .btn-tertiary::after {
+    transition: none;
+  }
+  .btn-arrow {
+    transition: none;
+  }
+}

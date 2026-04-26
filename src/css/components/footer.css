@@ -1,0 +1,155 @@
+/*
+ * footer.css — Site footer
+ * SEVER & ASOCIAȚII
+ * Spec: AGENTS.md §8
+ */
+
+/* ─── Footer base ─── */
+.site-footer {
+  background-color: var(--c-ink);
+  color: var(--c-white);
+  padding-top: var(--section-v);
+  padding-bottom: var(--gap-lg);
+}
+
+/* ─── Footer top ─── */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--gap-lg);
+  padding-bottom: var(--gap-lg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ─── Brand ─── */
+.footer-brand {
+  flex-shrink: 0;
+}
+
+.footer-logo {
+  font-family: var(--f-display);
+  font-size: var(--t-h3);
+  font-weight: 300;
+  letter-spacing: var(--ls-heading);
+  color: var(--c-white);
+  display: block;
+  margin-bottom: var(--gap-xs);
+}
+
+.footer-tagline {
+  font-family: var(--f-body);
+  font-size: var(--t-small);
+  font-weight: 300;
+  color: var(--c-stone);
+  margin: 0;
+}
+
+/* ─── Footer nav ─── */
+.footer-nav {
+  display: flex;
+  gap: var(--gap-xl);
+}
+
+.footer-nav-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xs);
+}
+
+.footer-nav-label {
+  font-family: var(--f-body);
+  font-size: var(--t-label);
+  font-weight: 500;
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--c-mist);
+  margin-bottom: var(--gap-xs);
+}
+
+.footer-nav-col a {
+  font-family: var(--f-body);
+  font-size: var(--t-small);
+  font-weight: 300;
+  color: var(--c-stone);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-out);
+  line-height: 1.6;
+}
+
+.footer-nav-col a:hover,
+.footer-nav-col a:focus-visible {
+  color: var(--c-white);
+}
+
+.footer-nav-col span:not(.footer-nav-label) {
+  font-family: var(--f-body);
+  font-size: var(--t-small);
+  font-weight: 300;
+  color: var(--c-stone);
+  line-height: 1.6;
+}
+
+/* ─── Footer bottom ─── */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--gap-md);
+}
+
+.footer-bottom span {
+  font-family: var(--f-body);
+  font-size: var(--t-label);
+  font-weight: 300;
+  color: var(--c-stone);
+  letter-spacing: 0.02em;
+}
+
+.footer-bottom a {
+  font-family: var(--f-body);
+  font-size: var(--t-label);
+  font-weight: 300;
+  color: var(--c-stone);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.footer-bottom a:hover,
+.footer-bottom a:focus-visible {
+  color: var(--c-white);
+}
+
+/* ─── Responsive: Tablet ─── */
+@media (max-width: 1024px) {
+  .footer-nav {
+    gap: var(--gap-lg);
+  }
+}
+
+/* ─── Responsive: Mobile ─── */
+@media (max-width: 767px) {
+  .footer-top {
+    flex-direction: column;
+    gap: var(--gap-lg);
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    gap: var(--gap-md);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: var(--gap-sm);
+    align-items: flex-start;
+  }
+}
+
+/* ─── Reduced motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  .footer-nav-col a,
+  .footer-bottom a {
+    transition: none;
+  }
+}

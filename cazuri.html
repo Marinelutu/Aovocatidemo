@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="/src/css/layout.css">
   <link rel="stylesheet" href="/src/css/components/nav.css">
   <link rel="stylesheet" href="/src/css/components/cursor.css">
+  <link rel="stylesheet" href="/src/css/components/footer.css">
   <link rel="stylesheet" href="/src/css/components/buttons.css">
   <link rel="stylesheet" href="/src/css/components/cards.css">
   <link rel="stylesheet" href="/src/css/pages/cazuri.css">
@@ -37,7 +38,7 @@
 
   <!-- Navigation -->
   <nav id="nav-island" role="navigation" aria-label="Navigare principală">
-    <div class="nav-logo">S&amp;A</div>
+    <div class="nav-logo"><a href="/" data-scramble>S&amp;A</a></div>
     <ul class="nav-links">
       <li><a href="/despre.html" data-scramble>Despre</a></li>
       <li><a href="/practici.html" data-scramble>Practici</a></li>
@@ -45,6 +46,11 @@
       <li><a href="/contact.html" data-scramble>Contact</a></li>
     </ul>
     <button class="nav-cta" data-cursor aria-label="Solicită o consultație">Consultație</button>
+    <button class="nav-hamburger" aria-label="Meniu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
 
   <!-- Page content -->
@@ -92,6 +98,7 @@
   <script type="module" src="/src/js/core/lenis.js"></script>
   <script type="module" src="/src/js/core/cursor.js"></script>
   <script type="module" src="/src/js/core/transitions.js"></script>
+  <script type="module" src="/src/js/core/nav.js"></script>
   <script type="module" src="/src/js/pages/cazuri.js"></script>
 </body>
 </html>

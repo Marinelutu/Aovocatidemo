@@ -81,4 +81,7 @@ if (overlay && !prefersReduced) {
   });
 }
 
+// Expose navigateTo globally for other modules (e.g., nav CTA)
+window.__navigateTo = navigateTo;
+
 export { navigateTo };
