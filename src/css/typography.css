@@ -1,0 +1,96 @@
+/*
+ * typography.css — type scale, font loading, utility classes
+ * SEVER & ASOCIAȚII
+ */
+
+/* ─── Google Fonts ─── */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
+
+/* ─── Base ─── */
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--f-body);
+  font-size: var(--t-body);
+  font-weight: 400;
+  line-height: var(--lh-body);
+  color: var(--c-text);
+  background-color: var(--c-bg);
+}
+
+/* ─── Heading utility classes ─── */
+
+.h-display {
+  font-family: var(--f-display);
+  font-size: var(--t-hero);
+  font-weight: 300;
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-display);
+}
+
+.h-display--italic {
+  font-family: var(--f-display);
+  font-size: var(--t-hero);
+  font-weight: 300;
+  font-style: italic;
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-display);
+}
+
+.h-1 {
+  font-family: var(--f-display);
+  font-size: var(--t-h1);
+  font-weight: 300;
+  line-height: var(--lh-heading);
+  letter-spacing: var(--ls-heading);
+}
+
+.h-2 {
+  font-family: var(--f-display);
+  font-size: var(--t-h2);
+  font-weight: 300;
+  line-height: var(--lh-heading);
+  letter-spacing: var(--ls-heading);
+}
+
+.h-3 {
+  font-family: var(--f-display);
+  font-size: var(--t-h3);
+  font-weight: 400;
+  line-height: var(--lh-heading);
+  letter-spacing: var(--ls-heading);
+}
+
+.h-sub {
+  font-family: var(--f-body);
+  font-size: var(--t-sub);
+  font-weight: 300;
+  line-height: var(--lh-body);
+  color: var(--c-text-muted);
+}
+
+.body-text {
+  font-family: var(--f-body);
+  font-size: var(--t-body);
+  font-weight: 400;
+  line-height: var(--lh-body);
+  color: var(--c-text-muted);
+}
+
+.label-small {
+  font-family: var(--f-body);
+  font-size: var(--t-label);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--c-stone);
+}
+
+/* ─── Selection ─── */
+::selection {
+  background-color: var(--c-ink);
+  color: var(--c-white);
+}

@@ -1,0 +1,68 @@
+/*
+ * tokens.css — ALL CSS custom properties (single source of truth)
+ * SEVER & ASOCIAȚII
+ */
+
+:root {
+  /* ─── Core palette ─── */
+  --c-black:      #0A0A0A;
+  --c-ink:        #1C1C1A;
+  --c-stone:      #6B6860;
+  --c-mist:       #C4C0B8;
+  --c-cream:      #F2EFE9;
+  --c-white:      #FAFAF8;
+
+  /* ─── Semantic ─── */
+  --c-bg:         var(--c-white);
+  --c-bg-dark:    var(--c-ink);
+  --c-text:       var(--c-black);
+  --c-text-muted: var(--c-stone);
+  --c-border:     rgba(0, 0, 0, 0.08);
+  --c-overlay:    rgba(10, 10, 10, 0.6);
+
+  /* ─── Nav glass ─── */
+  --c-glass-bg:   rgba(242, 239, 233, 0.72);
+  --c-glass-blur: 24px;
+
+  /* ─── Typography families ─── */
+  --f-display: 'Cormorant Garamond', Georgia, serif;
+  --f-body:    'Inter', -apple-system, sans-serif;
+  --f-mono:    'JetBrains Mono', monospace;
+
+  /* ─── Type scale — always clamp() ─── */
+  --t-hero:  clamp(56px, 9.5vw, 140px);
+  --t-h1:    clamp(40px, 6vw,   90px);
+  --t-h2:    clamp(28px, 4vw,   60px);
+  --t-h3:    clamp(20px, 2.5vw, 32px);
+  --t-sub:   clamp(15px, 1.5vw, 19px);
+  --t-body:  17px;
+  --t-small: 13px;
+  --t-label: 11px;
+
+  /* ─── Letter spacing ─── */
+  --ls-display: -0.03em;
+  --ls-heading: -0.02em;
+  --ls-label:    0.14em;
+
+  /* ─── Line height ─── */
+  --lh-display: 0.95;
+  --lh-heading: 1.1;
+  --lh-body:    1.65;
+
+  /* ─── Spacing ─── */
+  --section-v:     clamp(100px, 18vh, 200px);
+  --container-x:   clamp(24px, 7vw, 120px);
+  --container-max: 1440px;
+  --gap-xs: 8px;
+  --gap-sm: 16px;
+  --gap-md: 32px;
+  --gap-lg: 64px;
+  --gap-xl: 120px;
+
+  /* ─── Motion ─── */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.87, 0, 0.13, 1);
+  --dur-fast:    0.3s;
+  --dur-mid:     0.6s;
+  --dur-slow:    1.0s;
+}

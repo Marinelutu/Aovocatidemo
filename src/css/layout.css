@@ -1,0 +1,96 @@
+/*
+ * layout.css — container, grid, section helpers
+ * SEVER & ASOCIAȚII
+ */
+
+/* ─── Container ─── */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-x);
+}
+
+/* ─── Section base ─── */
+.section {
+  padding-block: var(--section-v);
+}
+
+/* ─── Dark section variant ─── */
+.section--dark {
+  background-color: var(--c-bg-dark);
+  color: var(--c-white);
+}
+
+.section--dark .label-small {
+  color: var(--c-mist);
+}
+
+.section--dark .body-text {
+  color: var(--c-mist);
+}
+
+/* ─── Grid helpers ─── */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--gap-md);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap-md);
+}
+
+/* ─── Responsive grids ─── */
+@media (max-width: 768px) {
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: var(--gap-sm);
+  }
+}
+
+/* ─── Flex helpers ─── */
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── Overflow hidden (for clip-path reveals) ─── */
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* ─── Image mask structure (used by image-mask.js) ─── */
+.img-mask {
+  overflow: hidden;
+  clip-path: inset(0 0 0 0);
+}
+
+.img-inner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ─── Visually hidden (accessibility) ─── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
