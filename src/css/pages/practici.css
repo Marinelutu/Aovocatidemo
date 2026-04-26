@@ -24,3 +24,80 @@
     gap: var(--gap-xl);
   }
 }
+
+/* Deep Dive Pages Specific Styles */
+.hero-image-wrapper {
+  margin-top: var(--gap-xl);
+}
+.hero-image-wrapper img {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  display: block;
+}
+
+.section--dark.padding-v {
+  padding-top: var(--section-v);
+  padding-bottom: var(--section-v);
+}
+
+.practice-list {
+  list-style: none;
+  padding: 0;
+}
+.practice-list li {
+  margin-bottom: var(--gap-sm);
+}
+
+.process-section-title {
+  margin-bottom: var(--gap-lg);
+}
+.process-steps {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.process-step {
+  margin-bottom: var(--gap-md);
+}
+.process-step .step-num {
+  color: var(--c-grey);
+}
+
+.step-line {
+  width: 100%;
+  height: 20px;
+  margin-bottom: var(--gap-md);
+}
+.step-line path {
+  fill: none;
+  stroke: var(--c-grey);
+  stroke-width: 1;
+  stroke-dasharray: 4,4;
+}
+
+.stats-section .container {
+  text-align: center;
+}
+.stat-item .stat-num {
+  margin-bottom: var(--gap-xs);
+}
+
+.cases-section-title {
+  margin-bottom: var(--gap-md);
+}
+.cases-list {
+  border-top: 1px solid var(--c-grey);
+}
+.case-brief {
+  padding: var(--gap-md) 0;
+  border-bottom: 1px solid var(--c-grey);
+}
+
+.cta-section {
+  text-align: center;
+  padding-top: var(--section-v);
+  padding-bottom: var(--section-v);
+}
+.cta-section .h-2 {
+  margin-bottom: var(--gap-md);
+}
