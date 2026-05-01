@@ -63,6 +63,25 @@ function initHome() {
 
   // Carousel S7 (Phase 13)
   initCarousel();
+
+  // Recent Case Reveal & Zoom (Phase 4 Improvements)
+  const caseImg = document.querySelector('.featured-case .img-inner');
+  if (caseImg && !prefersReduced) {
+    gsap.fromTo(caseImg, 
+      { scale: 1.3, yPercent: 10 },
+      {
+        scale: 1,
+        yPercent: 0,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.featured-case',
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true
+        }
+      }
+    );
+  }
 }
 
 /**

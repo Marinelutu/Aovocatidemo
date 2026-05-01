@@ -56,7 +56,7 @@
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: var(--c-overlay);
+  background: linear-gradient(to right, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.4) 100%);
   z-index: 2;
 }
 
@@ -69,7 +69,27 @@
 
 .hero-label {
   margin-bottom: var(--gap-md);
-  opacity: 0.8;
+  opacity: 1;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+
+.h-sub {
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+  font-weight: 400;
+  color: var(--c-white);
+  opacity: 0.9;
+}
+
+/* ─── Hero Button ─── */
+.hero-home .btn-primary {
+  color: var(--c-white);
+  border-color: var(--c-white);
+}
+
+.hero-home .btn-primary:hover {
+  background-color: var(--c-white);
+  color: var(--c-black);
 }
 
 /* ─── [S4] Stats ─── */
@@ -94,12 +114,29 @@
 }
 
 /* ─── [S6] Featured case ─── */
-.featured-case .case-image-wrapper {
+.featured-case .case-img-container {
+  width: 100%;
+  aspect-ratio: 4/3;
   border-radius: 4px;
+  overflow: hidden;
 }
 
-.featured-case .parallax-img {
-  will-change: transform;
+.featured-case .case-text {
+  max-width: 540px;
+}
+
+.featured-case .img-mask {
+  width: 100%;
+  height: 100%;
+  transition: clip-path 0.8s var(--ease-out);
+}
+
+.featured-case .case-img-container:hover .img-inner {
+  scale: 1.05;
+}
+
+.featured-case .img-inner {
+  transition: scale 0.8s var(--ease-out);
 }
 
 /* ─── [S7] Testimonials section ─── */

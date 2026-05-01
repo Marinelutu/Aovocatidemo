@@ -18,7 +18,7 @@
   --c-text:       var(--c-black);
   --c-text-muted: var(--c-stone);
   --c-border:     rgba(0, 0, 0, 0.08);
-  --c-overlay:    rgba(10, 10, 10, 0.6);
+  --c-overlay:    rgba(10, 10, 10, 0.85);
 
   /* ─── Nav glass ─── */
   --c-glass-bg:   rgba(242, 239, 233, 0.72);
@@ -37,7 +37,7 @@
   --t-sub:   clamp(15px, 1.5vw, 19px);
   --t-body:  17px;
   --t-small: 13px;
-  --t-label: 11px;
+  --t-label: 13px;
 
   /* ─── Letter spacing ─── */
   --ls-display: -0.03em;
