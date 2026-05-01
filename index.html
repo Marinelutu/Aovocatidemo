@@ -140,23 +140,40 @@
     <!-- [S4] Numbers -->
     <section class="section section--dark stats-section">
       <div class="container">
-        <div class="label-small mb-lg text-center">ÎN CIFRE</div>
-        <div class="grid-4 text-center">
-          <div class="stat-item">
-            <div class="h-1 mb-xs"><span class="counter" data-target="14">0</span></div>
-            <div class="body-text">Ani de practică</div>
+        <div class="stats-grid">
+          <!-- Left: Hero Stat -->
+          <div class="stats-hero">
+            <div class="stats-hero__main">
+              <span class="counter" data-target="98" data-suffix="%">0</span>
+              <span class="stats-hero__label">Succes Juridic</span>
+            </div>
+            <div class="stats-hero__separator"></div>
+            <p class="body-text stats-hero__desc">
+              Fiecare dosar este tratat cu precizie chirurgicală. Nu promitem victorii imposibile, dar garantăm cea mai riguroasă apărare disponibilă pe piața din Iași.
+            </p>
           </div>
-          <div class="stat-item">
-            <div class="h-1 mb-xs"><span class="counter" data-target="120" data-suffix="+">0</span></div>
-            <div class="body-text">Companii cliente</div>
+
+          <!-- Middle: Stats List -->
+          <div class="stats-list">
+            <div class="stats-list__item">
+              <span class="label-small">ANI DE EXPERIENȚĂ</span>
+              <span class="h-3 counter" data-target="14">0</span>
+            </div>
+            <div class="stats-list__item">
+              <span class="label-small">COMPANII REPREZENTATE</span>
+              <span class="h-3 counter" data-target="120" data-suffix="+">0</span>
+            </div>
+            <div class="stats-list__item">
+              <span class="label-small">TIMP DE RĂSPUNS</span>
+              <span class="h-3">&lt;24h</span>
+            </div>
           </div>
-          <div class="stat-item">
-            <div class="h-1 mb-xs"><span class="counter" data-target="98" data-suffix="%">0</span></div>
-            <div class="body-text">Cazuri soluționate favorabil</div>
-          </div>
-          <div class="stat-item">
-            <div class="h-1 mb-xs"><span class="counter" data-target="2">0</span></div>
-            <div class="body-text">Avocați. Toată atenția pentru dumneavoastră.</div>
+
+          <!-- Right: Decorative Bars -->
+          <div class="stats-decor" aria-hidden="true">
+            <div class="decor-bar"></div>
+            <div class="decor-bar"></div>
+            <div class="decor-bar"></div>
           </div>
         </div>
       </div>
@@ -164,6 +181,9 @@
 
     <!-- [S5] About Preview -->
     <section class="section pin-section about-preview">
+      <!-- Flow Field Animation Container -->
+      <div class="flow-field-bg" data-mode="light" aria-hidden="true"></div>
+      
       <div class="container grid-2 align-center">
         <div class="about-img">
           <div class="img-mask">

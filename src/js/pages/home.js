@@ -11,6 +11,8 @@ import { initStickyPin } from '../animations/sticky-pin.js';
 import { initImageMask } from '../animations/image-mask.js';
 import { initCounters } from '../animations/counters.js';
 import { initParallax } from '../animations/parallax.js';
+import { FlowField } from '../animations/flow-field.js';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,6 +25,37 @@ function initHome() {
   initImageMask('.img-mask');
   initCounters('.counter');
   initParallax();
+
+  // [S5] Flow Field Animation
+  const flowFieldContainer = document.querySelector('.flow-field-bg');
+  if (flowFieldContainer) {
+    const mode = flowFieldContainer.getAttribute('data-mode') || 'light';
+    new FlowField(flowFieldContainer, { 
+      agentCount: 600, 
+      flowScale: 0.004, 
+      mode: mode 
+    });
+  }
+
+
+  // Stats decor bars animation
+  const decorBars = document.querySelectorAll('.decor-bar');
+  if (decorBars.length > 0 && !prefersReduced) {
+    gsap.fromTo(decorBars, 
+      { scaleX: 0 },
+      {
+        scaleX: 1,
+        duration: 1.5,
+        ease: 'power4.out',
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: '.stats-section',
+          start: 'top 80%',
+          once: true
+        }
+      }
+    );
+  }
 
   // Scroll-to-explore indicator
   const scrollHint = document.querySelector('.scroll-hint');
