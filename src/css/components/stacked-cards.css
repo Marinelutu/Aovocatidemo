@@ -1,0 +1,225 @@
+/*
+ * stacked-cards.css — Cinematic 'Stacked Cards' section
+ * SEVER & ASOCIAȚII — Drept Corporativ 'CUM LUCRĂM'
+ * Full-viewport sticky-scroll cards with film grain overlay
+ */
+
+/* ─── Wrapper ─── */
+.stacked-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Individual Card ─── */
+.stacked-card {
+  position: sticky;
+  top: 0;
+  min-height: 100svh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.stacked-card:nth-child(1) { z-index: 10; }
+.stacked-card:nth-child(2) { z-index: 20; }
+.stacked-card:nth-child(3) { z-index: 30; }
+.stacked-card:nth-child(4) { z-index: 40; }
+.stacked-card:nth-child(5) { z-index: 50; }
+
+/* ─── Background Image ─── */
+.card-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.card-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.08);
+  transition: transform 1.2s var(--ease-out);
+}
+
+.stacked-card.is-active .card-bg img {
+  transform: scale(1);
+}
+
+/* Dark gradient overlay on images */
+.card-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 10, 0.55) 0%,
+    rgba(10, 10, 10, 0.75) 50%,
+    rgba(10, 10, 10, 0.85) 100%
+  );
+  z-index: 1;
+}
+
+/* ─── Film Grain Overlay ─── */
+.grain-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  opacity: 0.04;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+  mix-blend-mode: overlay;
+}
+
+/* ─── Card Content ─── */
+.card-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 720px;
+  padding: var(--gap-lg) var(--container-x);
+  color: var(--c-white);
+}
+
+/* Step label: "Etapa 01" */
+.card-label {
+  font-family: var(--f-body);
+  font-size: var(--t-label);
+  font-weight: 500;
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--c-gold);
+  margin-bottom: var(--gap-md);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Signature-style title */
+.card-title-signature {
+  font-family: var(--f-signature);
+  font-size: clamp(36px, 6vw, 80px);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--c-white);
+  margin-bottom: var(--gap-md);
+  filter: blur(10px);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Detail text */
+.card-detail {
+  font-family: var(--f-body);
+  font-size: clamp(15px, 1.2vw, 18px);
+  font-weight: 300;
+  line-height: var(--lh-body);
+  color: var(--c-mist);
+  max-width: 480px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Decorative divider between label and title */
+.card-divider {
+  width: 40px;
+  height: 1px;
+  background: var(--c-gold);
+  margin: 0 auto var(--gap-md);
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: center;
+}
+
+/* ─── Active State (set by GSAP) ─── */
+.stacked-card.is-active .card-label,
+.stacked-card.is-active .card-detail {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+
+.stacked-card.is-active .card-title-signature {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateY(0);
+  transition: opacity 1s var(--ease-out), filter 1.2s var(--ease-out), transform 1s var(--ease-out);
+}
+
+.stacked-card.is-active .card-divider {
+  opacity: 0.6;
+  transform: scaleX(1);
+  transition: opacity 0.6s var(--ease-out) 0.2s, transform 0.8s var(--ease-out) 0.2s;
+}
+
+/* ─── Section Header (before the cards) ─── */
+.stacked-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--c-ink);
+  color: var(--c-white);
+  text-align: center;
+}
+
+.stacked-header .label-small {
+  color: var(--c-gold);
+  margin-bottom: var(--gap-sm);
+}
+
+.stacked-header .h-1 {
+  color: var(--c-white);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .card-content {
+    padding: var(--gap-md) var(--gap-sm);
+    max-width: 100%;
+  }
+
+  .card-title-signature {
+    font-size: clamp(28px, 8vw, 48px);
+  }
+
+  .card-detail {
+    font-size: 14px;
+  }
+}
+
+/* ─── Reduced motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  .stacked-card {
+    position: relative;
+    min-height: auto;
+    padding: var(--gap-xl) 0;
+  }
+  
+  .card-bg img {
+    transform: scale(1);
+    transition: none;
+  }
+
+  .card-label,
+  .card-title-signature,
+  .card-detail,
+  .card-divider {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: none;
+  }
+
+  .grain-overlay {
+    display: none;
+  }
+}

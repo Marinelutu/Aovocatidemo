@@ -7,7 +7,7 @@
   <meta name="description" content="Servicii de drept corporativ: structuri legale, fuziuni, achiziții, guvernanță. Sever & Asociații — 120+ companii reprezentate.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/src/css/reset.css">
   <link rel="stylesheet" href="/src/css/tokens.css">
   <link rel="stylesheet" href="/src/css/typography.css">
@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="/src/css/components/footer.css">
   <link rel="stylesheet" href="/src/css/components/buttons.css">
   <link rel="stylesheet" href="/src/css/components/cards.css">
+  <link rel="stylesheet" href="/src/css/components/stacked-cards.css">
   <link rel="stylesheet" href="/src/css/pages/practici.css">
 </head>
 <body data-page="corporativ">
@@ -78,69 +79,88 @@
       </div>
     </section>
 
-    <!-- [S3] Process with Floating Assets -->
-    <section class="section process-section py-xxl">
-      <div class="container relative">
-        <div class="label-small reveal-text mb-lg">CUM LUCRĂM</div>
-        
-        <div class="process-horizontal">
-          <div class="process-card reveal-text">
-            <div class="card-num">01</div>
-            <div class="card-content">
-              <h3 class="h-3 mb-xs">Analiză inițială</h3>
-              <p class="body-text text-muted">Înțelegem structura actuală și riscurile existente.</p>
-            </div>
-          </div>
-          
-          <div class="process-card reveal-text">
-            <div class="card-num">02</div>
-            <div class="card-content">
-              <h3 class="h-3 mb-xs">Strategie</h3>
-              <p class="body-text text-muted">Propunem soluția juridică optimă, cu variante.</p>
-            </div>
-          </div>
+    <!-- [S3] Stacked Cards: CUM LUCRĂM -->
+    <div class="stacked-wrapper" id="stacked-cum-lucram">
 
-          <div class="process-card reveal-text">
-            <div class="card-num">03</div>
-            <div class="card-content">
-              <h3 class="h-3 mb-xs">Implementare</h3>
-              <p class="body-text text-muted">Redactăm, negociem, reprezentăm.</p>
-            </div>
-          </div>
-
-          <div class="process-card reveal-text">
-            <div class="card-num">04</div>
-            <div class="card-content">
-              <h3 class="h-3 mb-xs">Monitorizare</h3>
-              <p class="body-text text-muted">Rămânem alături pe toată durata relației.</p>
-            </div>
-          </div>
-          
-          <!-- Connector line -->
-          <div class="process-line"></div>
+      <!-- Header Card -->
+      <div class="stacked-header">
+        <div class="card-content">
+          <div class="label-small reveal-text">CUM LUCRĂM</div>
+          <h2 class="h-1 reveal-text">Cinci etape.<br><span class="italic">O singură direcție.</span></h2>
         </div>
       </div>
-    </section>
 
-    <!-- [S4] Stats (Hardcoded) -->
-    <section class="section stats-practici bg-dark py-xl">
-      <div class="container">
-        <div class="grid-3 stats-grid-elegant">
-          <div class="stat-item reveal-text">
-            <div class="h-display stat-num">120<span class="text-accent">+</span></div>
-            <div class="label-small text-muted mt-xs">Companii reprezentate</div>
-          </div>
-          <div class="stat-item reveal-text">
-            <div class="h-display stat-num">14</div>
-            <div class="label-small text-muted mt-xs">Ani experiență corporativă</div>
-          </div>
-          <div class="stat-item reveal-text">
-            <div class="h-display stat-num">8</div>
-            <div class="label-small text-muted mt-xs">Tranzacții M&A finalizate</div>
-          </div>
+      <!-- Card 01: Analiză -->
+      <div class="stacked-card" data-card-index="0">
+        <div class="card-bg">
+          <img src="/images/stacked_01_analiza.png" alt="Analiză inițială" loading="lazy">
+        </div>
+        <div class="grain-overlay" aria-hidden="true"></div>
+        <div class="card-content">
+          <div class="card-label">Etapa 01</div>
+          <div class="card-divider"></div>
+          <h3 class="card-title-signature">Analiză inițială</h3>
+          <p class="card-detail">Cartografiem structura juridică existentă, identificăm riscurile și evaluăm oportunitățile de optimizare.</p>
         </div>
       </div>
-    </section>
+
+      <!-- Card 02: Strategie -->
+      <div class="stacked-card" data-card-index="1">
+        <div class="card-bg">
+          <img src="/images/stacked_02_strategie.png" alt="Strategie juridică" loading="lazy">
+        </div>
+        <div class="grain-overlay" aria-hidden="true"></div>
+        <div class="card-content">
+          <div class="card-label">Etapa 02</div>
+          <div class="card-divider"></div>
+          <h3 class="card-title-signature">Strategie</h3>
+          <p class="card-detail">Construim un plan juridic personalizat, cu variante de acțiune și analiza cost-beneficiu pentru fiecare scenariu.</p>
+        </div>
+      </div>
+
+      <!-- Card 03: Implementare -->
+      <div class="stacked-card" data-card-index="2">
+        <div class="card-bg">
+          <img src="/images/stacked_03_implementare.png" alt="Implementare" loading="lazy">
+        </div>
+        <div class="grain-overlay" aria-hidden="true"></div>
+        <div class="card-content">
+          <div class="card-label">Etapa 03</div>
+          <div class="card-divider"></div>
+          <h3 class="card-title-signature">Implementare</h3>
+          <p class="card-detail">Redactăm actele, negociem termenii, reprezentăm interesele — de la contract până la finalitate.</p>
+        </div>
+      </div>
+
+      <!-- Card 04: Negociere -->
+      <div class="stacked-card" data-card-index="3">
+        <div class="card-bg">
+          <img src="/images/stacked_04_negociere.png" alt="Negociere" loading="lazy">
+        </div>
+        <div class="grain-overlay" aria-hidden="true"></div>
+        <div class="card-content">
+          <div class="card-label">Etapa 04</div>
+          <div class="card-divider"></div>
+          <h3 class="card-title-signature">Negociere</h3>
+          <p class="card-detail">Apărăm poziția dumneavoastră la masa negocierilor, cu fermitate și diplomație calibrate la context.</p>
+        </div>
+      </div>
+
+      <!-- Card 05: Monitorizare -->
+      <div class="stacked-card" data-card-index="4">
+        <div class="card-bg">
+          <img src="/images/stacked_05_monitorizare.png" alt="Monitorizare" loading="lazy">
+        </div>
+        <div class="grain-overlay" aria-hidden="true"></div>
+        <div class="card-content">
+          <div class="card-label">Etapa 05</div>
+          <div class="card-divider"></div>
+          <h3 class="card-title-signature">Monitorizare</h3>
+          <p class="card-detail">Rămânem alături pe toată durata relației comerciale, asigurând conformitatea și adaptarea la schimbări.</p>
+        </div>
+      </div>
+
+    </div>
 
     <!-- [S5] Relevant cases -->
     <section class="section cases-preview py-xxl">

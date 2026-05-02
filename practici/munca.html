@@ -7,7 +7,7 @@
   <meta name="description" content="Servicii de dreptul muncii: contracte, concedieri, litigii HR. Sever & Asociații — 300+ dosare soluționate.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/src/css/reset.css">
   <link rel="stylesheet" href="/src/css/tokens.css">
   <link rel="stylesheet" href="/src/css/typography.css">
@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="/src/css/components/footer.css">
   <link rel="stylesheet" href="/src/css/components/buttons.css">
   <link rel="stylesheet" href="/src/css/components/cards.css">
+  <link rel="stylesheet" href="/src/css/components/stacked-cards.css">
   <link rel="stylesheet" href="/src/css/pages/practici.css">
 </head>
 <body data-page="munca">
@@ -78,69 +79,88 @@
       </div>
     </section>
 
-    <!-- [S3] Process with Floating Assets -->
-    <section class="section process-section py-xxl">
-      <div class="container relative">
-        <div class="label-small reveal-text mb-lg">CUM LUCRĂM</div>
-        
-        <div class="process-horizontal">
-          <div class="process-card reveal-text">
-            <div class="card-num">01</div>
-            <div class="card-content">
-              <h3 class="h-3 mb-xs">Prevenție</h3>
-              <p class="body-text text-muted">Auditul politicilor actuale și corectarea vulnerabilităților.</p>
-            </div>
-          </div>
-          
-          <div class="process-card reveal-text">
-            <div class="card-num">02</div>
-            <div class="card-content">
-              <h3 class="h-3 mb-xs">Redactare</h3>
-              <p class="body-text text-muted">Crearea documentației care protejează interesele angajatorului.</p>
-            </div>
-          </div>
+    <!-- [S3] Stacked Cards: CUM LUCRĂM -->
+    <div class="stacked-wrapper" id="stacked-cum-lucram">
 
-          <div class="process-card reveal-text">
-            <div class="card-num">03</div>
-            <div class="card-content">
-              <h3 class="h-3 mb-xs">Negociere</h3>
-              <p class="body-text text-muted">Medierea conflictelor de muncă înainte de litigiu.</p>
-            </div>
-          </div>
-
-          <div class="process-card reveal-text">
-            <div class="card-num">04</div>
-            <div class="card-content">
-              <h3 class="h-3 mb-xs">Asistență</h3>
-              <p class="body-text text-muted">Reprezentare în negocieri sau în fața instanțelor de judecată.</p>
-            </div>
-          </div>
-          
-          <!-- Connector line -->
-          <div class="process-line"></div>
+      <!-- Header Card -->
+      <div class="stacked-header">
+        <div class="card-content">
+          <div class="label-small reveal-text">CUM LUCRĂM</div>
+          <h2 class="h-1 reveal-text">Cinci etape.<br><span class="italic">Un echilibru sigur.</span></h2>
         </div>
       </div>
-    </section>
 
-    <!-- [S4] Stats (Hardcoded) -->
-    <section class="section stats-practici bg-dark py-xl">
-      <div class="container">
-        <div class="grid-3 stats-grid-elegant">
-          <div class="stat-item reveal-text">
-            <div class="h-display stat-num">300<span class="text-accent">+</span></div>
-            <div class="label-small text-muted mt-xs">Dosare soluționate</div>
-          </div>
-          <div class="stat-item reveal-text">
-            <div class="h-display stat-num">96<span class="text-accent">%</span></div>
-            <div class="label-small text-muted mt-xs">Rata de succes în litigii</div>
-          </div>
-          <div class="stat-item reveal-text">
-            <div class="h-display stat-num">50<span class="text-accent">+</span></div>
-            <div class="label-small text-muted mt-xs">Companii asistate recurent</div>
-          </div>
+      <!-- Card 01: Prevenție -->
+      <div class="stacked-card" data-card-index="0">
+        <div class="card-bg">
+          <img src="/images/stacked_munca_01.png" alt="Prevenție HR" loading="lazy">
+        </div>
+        <div class="grain-overlay" aria-hidden="true"></div>
+        <div class="card-content">
+          <div class="card-label">Etapa 01</div>
+          <div class="card-divider"></div>
+          <h3 class="card-title-signature">Prevenție</h3>
+          <p class="card-detail">Audităm politicile actuale de resurse umane, identificăm vulnerabilitățile și corectăm riscurile înainte să devină litigii.</p>
         </div>
       </div>
-    </section>
+
+      <!-- Card 02: Redactare -->
+      <div class="stacked-card" data-card-index="1">
+        <div class="card-bg">
+          <img src="/images/stacked_munca_02.png" alt="Redactare documente" loading="lazy">
+        </div>
+        <div class="grain-overlay" aria-hidden="true"></div>
+        <div class="card-content">
+          <div class="card-label">Etapa 02</div>
+          <div class="card-divider"></div>
+          <h3 class="card-title-signature">Redactare</h3>
+          <p class="card-detail">Creăm documentația care protejează interesele angajatorului: contracte, regulamente interne, clauze de confidențialitate.</p>
+        </div>
+      </div>
+
+      <!-- Card 03: Negociere -->
+      <div class="stacked-card" data-card-index="2">
+        <div class="card-bg">
+          <img src="/images/stacked_munca_03.png" alt="Negociere și mediere" loading="lazy">
+        </div>
+        <div class="grain-overlay" aria-hidden="true"></div>
+        <div class="card-content">
+          <div class="card-label">Etapa 03</div>
+          <div class="card-divider"></div>
+          <h3 class="card-title-signature">Negociere</h3>
+          <p class="card-detail">Mediem conflictele de muncă înainte de a ajunge în instanță, căutând soluții echitabile și eficiente pentru toate părțile.</p>
+        </div>
+      </div>
+
+      <!-- Card 04: Asistență -->
+      <div class="stacked-card" data-card-index="3">
+        <div class="card-bg">
+          <img src="/images/stacked_munca_04.png" alt="Asistență juridică" loading="lazy">
+        </div>
+        <div class="grain-overlay" aria-hidden="true"></div>
+        <div class="card-content">
+          <div class="card-label">Etapa 04</div>
+          <div class="card-divider"></div>
+          <h3 class="card-title-signature">Asistență</h3>
+          <p class="card-detail">Reprezentăm interesele în negocieri, în fața instanțelor de judecată sau în relația cu inspectoratul muncii.</p>
+        </div>
+      </div>
+
+      <!-- Card 05: Conformitate -->
+      <div class="stacked-card" data-card-index="4">
+        <div class="card-bg">
+          <img src="/images/stacked_munca_05.png" alt="Conformitate continuă" loading="lazy">
+        </div>
+        <div class="grain-overlay" aria-hidden="true"></div>
+        <div class="card-content">
+          <div class="card-label">Etapa 05</div>
+          <div class="card-divider"></div>
+          <h3 class="card-title-signature">Conformitate</h3>
+          <p class="card-detail">Asigurăm conformitatea continuă cu legislația muncii, GDPR și reglementările în vigoare, adaptându-ne la schimbări.</p>
+        </div>
+      </div>
+
+    </div>
 
     <!-- [S5] Relevant cases -->
     <section class="section">

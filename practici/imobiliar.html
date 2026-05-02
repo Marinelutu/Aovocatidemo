@@ -7,7 +7,7 @@
   <meta name="description" content="Servicii de drept imobiliar: due diligence, tranzacții, litigii. Sever & Asociații — 85M € în tranzacții gestionate.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/src/css/reset.css">
   <link rel="stylesheet" href="/src/css/tokens.css">
   <link rel="stylesheet" href="/src/css/typography.css">
@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="/src/css/components/footer.css">
   <link rel="stylesheet" href="/src/css/components/buttons.css">
   <link rel="stylesheet" href="/src/css/components/cards.css">
+  <link rel="stylesheet" href="/src/css/components/stacked-cards.css">
   <link rel="stylesheet" href="/src/css/pages/practici.css">
 </head>
 <body data-page="imobiliar">
@@ -78,69 +79,88 @@
       </div>
     </section>
 
-    <!-- [S3] Process with Floating Assets -->
-    <section class="section process-section py-xxl">
-      <div class="container relative">
-        <div class="label-small reveal-text mb-lg">CUM LUCRĂM</div>
-        
-        <div class="process-horizontal">
-          <div class="process-card reveal-text">
-            <div class="card-num">01</div>
-            <div class="card-content">
-              <h3 class="h-3 mb-xs">Verificare</h3>
-              <p class="body-text text-muted">Analizăm istoricul proprietății și titlurile de proprietate.</p>
-            </div>
-          </div>
-          
-          <div class="process-card reveal-text">
-            <div class="card-num">02</div>
-            <div class="card-content">
-              <h3 class="h-3 mb-xs">Securizare</h3>
-              <p class="body-text text-muted">Identificăm și eliminăm riscurile juridice sau sarcinile ascunse.</p>
-            </div>
-          </div>
+    <!-- [S3] Stacked Cards: CUM LUCRĂM -->
+    <div class="stacked-wrapper" id="stacked-cum-lucram">
 
-          <div class="process-card reveal-text">
-            <div class="card-num">03</div>
-            <div class="card-content">
-              <h3 class="h-3 mb-xs">Negociere</h3>
-              <p class="body-text text-muted">Apărăm interesele în contractul de vânzare-cumpărare.</p>
-            </div>
-          </div>
-
-          <div class="process-card reveal-text">
-            <div class="card-num">04</div>
-            <div class="card-content">
-              <h3 class="h-3 mb-xs">Finalizare</h3>
-              <p class="body-text text-muted">Asistăm la semnare și asigurăm intabularea corectă.</p>
-            </div>
-          </div>
-          
-          <!-- Connector line -->
-          <div class="process-line"></div>
+      <!-- Header Card -->
+      <div class="stacked-header">
+        <div class="card-content">
+          <div class="label-small reveal-text">CUM LUCRĂM</div>
+          <h2 class="h-1 reveal-text">Patru pași.<br><span class="italic">Zero surprize.</span></h2>
         </div>
       </div>
-    </section>
 
-    <!-- [S4] Stats (Hardcoded) -->
-    <section class="section stats-practici bg-dark py-xl">
-      <div class="container">
-        <div class="grid-3 stats-grid-elegant">
-          <div class="stat-item reveal-text">
-            <div class="h-display stat-num">85<span class="text-accent">M €</span></div>
-            <div class="label-small text-muted mt-xs">Tranzacții gestionate</div>
-          </div>
-          <div class="stat-item reveal-text">
-            <div class="h-display stat-num">200<span class="text-accent">+</span></div>
-            <div class="label-small text-muted mt-xs">Contracte imobiliare</div>
-          </div>
-          <div class="stat-item reveal-text">
-            <div class="h-display stat-num">0</div>
-            <div class="label-small text-muted mt-xs">Tranzacții contestate</div>
-          </div>
+      <!-- Card 01: Verificare -->
+      <div class="stacked-card" data-card-index="0">
+        <div class="card-bg">
+          <img src="/images/stacked_imob_01.png" alt="Verificare imobiliară" loading="lazy">
+        </div>
+        <div class="grain-overlay" aria-hidden="true"></div>
+        <div class="card-content">
+          <div class="card-label">Etapa 01</div>
+          <div class="card-divider"></div>
+          <h3 class="card-title-signature">Verificare</h3>
+          <p class="card-detail">Analizăm istoricul complet al proprietății, titlurile de proprietate și orice sarcini înscrise în cartea funciară.</p>
         </div>
       </div>
-    </section>
+
+      <!-- Card 02: Securizare -->
+      <div class="stacked-card" data-card-index="1">
+        <div class="card-bg">
+          <img src="/images/stacked_imob_02.png" alt="Securizare juridică" loading="lazy">
+        </div>
+        <div class="grain-overlay" aria-hidden="true"></div>
+        <div class="card-content">
+          <div class="card-label">Etapa 02</div>
+          <div class="card-divider"></div>
+          <h3 class="card-title-signature">Securizare</h3>
+          <p class="card-detail">Identificăm și eliminăm riscurile juridice, sarcinile ascunse și viciile de formă înainte de tranzacție.</p>
+        </div>
+      </div>
+
+      <!-- Card 03: Negociere -->
+      <div class="stacked-card" data-card-index="2">
+        <div class="card-bg">
+          <img src="/images/stacked_imob_03.png" alt="Negociere contractuală" loading="lazy">
+        </div>
+        <div class="grain-overlay" aria-hidden="true"></div>
+        <div class="card-content">
+          <div class="card-label">Etapa 03</div>
+          <div class="card-divider"></div>
+          <h3 class="card-title-signature">Negociere</h3>
+          <p class="card-detail">Apărăm interesele în contractul de vânzare-cumpărare, asigurând clauze echitabile și protecții contractuale solide.</p>
+        </div>
+      </div>
+
+      <!-- Card 04: Finalizare -->
+      <div class="stacked-card" data-card-index="3">
+        <div class="card-bg">
+          <img src="/images/stacked_imob_04.png" alt="Finalizare tranzacție" loading="lazy">
+        </div>
+        <div class="grain-overlay" aria-hidden="true"></div>
+        <div class="card-content">
+          <div class="card-label">Etapa 04</div>
+          <div class="card-divider"></div>
+          <h3 class="card-title-signature">Finalizare</h3>
+          <p class="card-detail">Asistăm la semnarea actelor, verificăm autentificarea notarială și asigurăm intabularea corectă în cartea funciară.</p>
+        </div>
+      </div>
+
+      <!-- Card 05: Monitorizare -->
+      <div class="stacked-card" data-card-index="4">
+        <div class="card-bg">
+          <img src="/images/stacked_imob_05.png" alt="Monitorizare portofoliu" loading="lazy">
+        </div>
+        <div class="grain-overlay" aria-hidden="true"></div>
+        <div class="card-content">
+          <div class="card-label">Etapa 05</div>
+          <div class="card-divider"></div>
+          <h3 class="card-title-signature">Monitorizare</h3>
+          <p class="card-detail">Oferim asistență continuă post-tranzacție, de la administrarea imobiliară la rezolvarea eventualelor dispute.</p>
+        </div>
+      </div>
+
+    </div>
 
     <!-- [S5] Relevant cases -->
     <section class="section">

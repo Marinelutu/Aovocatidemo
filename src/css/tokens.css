@@ -29,6 +29,7 @@
   --f-display: 'Cormorant Garamond', Georgia, serif;
   --f-body:    'Inter', -apple-system, sans-serif;
   --f-mono:    'JetBrains Mono', monospace;
+  --f-signature: 'Mrs Saint Delafield', cursive;
 
   /* ─── Type scale — always clamp() ─── */
   --t-hero:  clamp(56px, 9.5vw, 140px);

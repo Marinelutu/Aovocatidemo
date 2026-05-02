@@ -2,6 +2,7 @@
  * practici.js — Practice pages interactions
  * SEVER & ASOCIAȚII
  * Phase 7/8/9 + Phase 15: SVG stroke draw-on, counters, sticky, text reveal
+ * + Stacked Cards cinematic animation
  */
 
 import gsap from 'gsap';
@@ -64,46 +65,8 @@ function initPractici() {
     }
   }
 
-  /* ─── Process Horizontal Animation ─── */
-  const processSection = document.querySelector('.process-horizontal');
-  if (processSection && !prefersReduced) {
-    const cards = processSection.querySelectorAll('.process-card');
-    const line = processSection.querySelector('.process-line');
-
-    if (line) {
-      gsap.fromTo(line, 
-        { scaleX: 0, transformOrigin: 'left center' },
-        { 
-          scaleX: 1,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: processSection,
-            start: 'top 80%',
-            end: 'center 60%',
-            scrub: true,
-          }
-        }
-      );
-    }
-
-    if (cards.length > 0) {
-      gsap.fromTo(cards,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          stagger: 0.1,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: processSection,
-            start: 'top 80%',
-            end: 'center 60%',
-            scrub: true,
-          }
-        }
-      );
-    }
-  }
+  /* ─── Stacked Cards: Cinematic Scroll ─── */
+  initStackedCards();
 
   /* ─── Floating Assets Parallax ─── */
   if (!prefersReduced) {
@@ -124,6 +87,109 @@ function initPractici() {
   }
 }
 
+/**
+ * Stacked Cards — Full-viewport sticky cards with cinematic entrance
+ * Each card covers the previous one as the user scrolls.
+ * Content animates in with blur-to-clear and fade-in-up effects.
+ */
+function initStackedCards() {
+  const wrapper = document.querySelector('.stacked-wrapper');
+  if (!wrapper) return;
+
+  const cards = wrapper.querySelectorAll('.stacked-card');
+  if (cards.length === 0) return;
+
+  if (prefersReduced) {
+    // For reduced motion: just show everything
+    cards.forEach(card => card.classList.add('is-active'));
+    return;
+  }
+
+  cards.forEach((card, index) => {
+    const label = card.querySelector('.card-label');
+    const divider = card.querySelector('.card-divider');
+    const title = card.querySelector('.card-title-signature');
+    const detail = card.querySelector('.card-detail');
+    const bgImg = card.querySelector('.card-bg img');
+
+    // Create a timeline for each card's entrance
+    const tl = gsap.timeline({ paused: true });
+
+    // Background image: subtle parallax zoom
+    if (bgImg) {
+      tl.fromTo(bgImg,
+        { scale: 1.15 },
+        { scale: 1, duration: 1.5, ease: 'power2.out' },
+        0
+      );
+    }
+
+    // Label: fade in and slide up
+    if (label) {
+      tl.fromTo(label,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' },
+        0.2
+      );
+    }
+
+    // Divider: scale in from center
+    if (divider) {
+      tl.fromTo(divider,
+        { opacity: 0, scaleX: 0 },
+        { opacity: 0.6, scaleX: 1, duration: 0.8, ease: 'power3.out' },
+        0.3
+      );
+    }
+
+    // Title: blur-to-clear + fade-in-up (the hero animation)
+    if (title) {
+      tl.fromTo(title,
+        { opacity: 0, filter: 'blur(12px)', y: 30 },
+        { opacity: 1, filter: 'blur(0px)', y: 0, duration: 1.2, ease: 'power3.out' },
+        0.35
+      );
+    }
+
+    // Detail: fade-in-up
+    if (detail) {
+      tl.fromTo(detail,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' },
+        0.6
+      );
+    }
+
+    // Create ScrollTrigger for each card
+    ScrollTrigger.create({
+      trigger: card,
+      start: 'top 60%',
+      end: 'center center',
+      onEnter: () => {
+        card.classList.add('is-active');
+        tl.play();
+      },
+      // Keep revealed — don't reverse
+    });
+
+    // Parallax: as the card is being scrolled past, shift content up
+    if (index < cards.length - 1) {
+      gsap.to(card.querySelector('.card-content'), {
+        y: -60,
+        opacity: 0.3,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: card,
+          start: 'center center',
+          end: 'bottom top',
+          scrub: 1,
+        }
+      });
+    }
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   setTimeout(initPractici, 200);
 });
+
