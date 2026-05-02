@@ -128,6 +128,9 @@ function initVideoBackground() {
 
   if (!video || !fallback) return;
 
+  // Add playsinline dynamically to satisfy iOS while avoiding HTML IDE warnings
+  video.setAttribute('playsinline', '');
+
   // If video can play, ensure it's above fallback
   video.addEventListener('canplaythrough', () => {
     video.style.zIndex = '1';

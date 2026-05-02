@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arii de practică — SEVER & ASOCIAȚII</title>
-  <meta name="description" content="Sever & Asociații oferă servicii juridice în drept corporativ, drept imobiliar și dreptul muncii la nivel de elită.">
+  <title>Consultație | SEVER & ASOCIAȚII</title>
+  <meta name="description" content="Programați o consultație juridică premium cu avocații SEVER & ASOCIAȚII.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -16,25 +16,17 @@
   <link rel="stylesheet" href="/src/css/components/cursor.css">
   <link rel="stylesheet" href="/src/css/components/footer.css">
   <link rel="stylesheet" href="/src/css/components/buttons.css">
-  <link rel="stylesheet" href="/src/css/components/cards.css">
-  <link rel="stylesheet" href="/src/css/pages/practici.css">
+  <link rel="stylesheet" href="/src/css/components/form.css">
+  <link rel="stylesheet" href="/src/css/pages/consultatie.css">
 </head>
-<body data-page="practici">
+<body data-page="consultatie">
 
-  <!-- Cursor elements — required on every page -->
+  <!-- Cursor elements -->
   <div id="cursor-dot" aria-hidden="true"></div>
   <div id="cursor-ring" aria-hidden="true"></div>
 
-  <!-- Page transition overlay — required on every page -->
+  <!-- Page transition overlay -->
   <div id="page-overlay" aria-hidden="true"></div>
-
-  <!-- Scroll-to-explore indicator -->
-  <div class="scroll-hint" aria-hidden="true">
-    <span class="scroll-hint__label">Derulează</span>
-    <svg class="scroll-hint__arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="1.5"/>
-    </svg>
-  </div>
 
   <!-- Navigation -->
   <nav id="nav-island" role="navigation" aria-label="Navigare principală">
@@ -52,54 +44,71 @@
     </button>
   </nav>
 
-  <!-- Page content -->
   <main>
-    <!-- S1: Hero + Practice Areas Cards -->
-    <section class="section section--hero practici-hero">
+    <!-- Hero Section -->
+    <section class="section pt-xxl pb-lg">
       <div class="container">
-        <div class="label-small h-label reveal-text mb-4">ARII DE PRACTICĂ</div>
-        <h1 class="h-display reveal-text">
-          Trei domenii.<br>
-          Fiecare la<br>
-          nivel de elită.
-        </h1>
-        
-        <div class="grid-3 practici-grid">
-          <!-- CARD 1: Drept Corporativ -->
-          <a href="/practici/corporativ.html" class="card-practice" data-cursor>
-            <div class="img-mask">
-              <img src="/images/practici_corporativ_1777198315247.png" alt="Drept Corporativ" class="img-inner" loading="lazy">
-            </div>
-            <h3 class="h-3 reveal-text mt-2">Drept Corporativ</h3>
-            <p class="body-text reveal-text mt-1">Structuri legale care rezistă presiunii.</p>
-            <div class="card-stat mt-4">
-              <span class="label-small reveal-text">Află mai mult →</span>
-            </div>
-          </a>
+        <div class="hero-small__content">
+          <h1 class="h-display text-reveal">Programare <br><span class="italic">Consultație</span></h1>
+          <p class="h-sub text-muted mt-sm text-reveal">Alegeți data și ora potrivită pentru o discuție detaliată despre cazul dumneavoastră.</p>
+        </div>
+      </div>
+    </section>
 
-          <!-- CARD 2: Drept Imobiliar -->
-          <a href="/practici/imobiliar.html" class="card-practice" data-cursor>
-            <div class="img-mask">
-              <img src="/images/practici_imobiliar_1777198328188.png" alt="Drept Imobiliar" class="img-inner" loading="lazy">
+    <!-- Booking Section -->
+    <section class="section pb-xxl">
+      <div class="container">
+        <div class="grid-2">
+          <div class="booking-calendar-wrapper">
+            <div class="booking-card glass-card p-md">
+              <div id="booking-calendar">
+                <!-- Calendar UI will be injected here -->
+                <div class="calendar-placeholder">
+                  <p class="body-text">Încărcăm calendarul interactiv...</p>
+                </div>
+              </div>
             </div>
-            <h3 class="h-3 reveal-text mt-2">Drept Imobiliar</h3>
-            <p class="body-text reveal-text mt-1">Fiecare proprietate are un risc ascuns.</p>
-            <div class="card-stat mt-4">
-              <span class="label-small reveal-text">Află mai mult →</span>
-            </div>
-          </a>
+          </div>
 
-          <!-- CARD 3: Dreptul Muncii -->
-          <a href="/practici/munca.html" class="card-practice" data-cursor>
-            <div class="img-mask">
-              <img src="/images/practici_munca_1777198344213.png" alt="Dreptul Muncii" class="img-inner" loading="lazy">
+          <div class="booking-info">
+            <div class="info-card glass-card p-md">
+              <h2 class="h-2 mb-sm">Solicită un Apel</h2>
+              <p class="body-text mb-md text-muted">Dacă preferați să vă contactăm noi pentru a stabili detaliile, lăsați-ne numărul de telefon.</p>
+              
+              <form id="callback-form" class="form-compact">
+                <div class="form-group mb-sm">
+                  <input type="text" id="name" placeholder="Nume Complet" class="form-input">
+                </div>
+                <div class="form-group mb-sm">
+                  <input type="tel" id="phone" placeholder="Număr de Telefon" class="form-input">
+                </div>
+                <div class="form-group mb-sm">
+                  <select id="topic" class="form-input" title="Subiectul discuției">
+                    <option value="" disabled selected>Subiectul discuției</option>
+                    <option value="corporate">Drept Corporativ</option>
+                    <option value="realestate">Drept Imobiliar</option>
+                    <option value="labor">Dreptul Muncii</option>
+                    <option value="litigation">Litigii</option>
+                    <option value="other">Altceva</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn-primary w-full mt-sm" data-cursor>
+                  <span>Solicită Apel →</span>
+                </button>
+              </form>
             </div>
-            <h3 class="h-3 reveal-text mt-2">Dreptul Muncii</h3>
-            <p class="body-text reveal-text mt-1">Relațiile de muncă au regulile lor.</p>
-            <div class="card-stat mt-4">
-              <span class="label-small reveal-text">Află mai mult →</span>
+
+            <div class="contact-quick mt-lg">
+              <div class="quick-item mb-xs">
+                <span class="label-small text-muted">URGENȚE:</span>
+                <a href="tel:+40721000000" class="h-3 block">+40 721 000 000</a>
+              </div>
+              <div class="quick-item">
+                <span class="label-small text-muted">EMAIL:</span>
+                <a href="mailto:office@sever-asociatii.ro" class="h-3 block">office@sever-asociatii.ro</a>
+              </div>
             </div>
-          </a>
+          </div>
         </div>
       </div>
     </section>
@@ -145,6 +154,6 @@
   <script type="module" src="/src/js/core/cursor.js"></script>
   <script type="module" src="/src/js/core/transitions.js"></script>
   <script type="module" src="/src/js/core/nav.js"></script>
-  <script type="module" src="/src/js/pages/practici.js"></script>
+  <script type="module" src="/src/js/pages/consultatie.js"></script>
 </body>
 </html>

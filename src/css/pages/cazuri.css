@@ -38,6 +38,11 @@
   transition: transform var(--dur-fast) var(--ease-out);
 }
 
+a.case-card {
+  text-decoration: none;
+  color: inherit;
+}
+
 .case-card:hover {
   transform: translateY(-8px);
 }

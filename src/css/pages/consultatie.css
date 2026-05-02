@@ -1,0 +1,70 @@
+/* consultatie.css — Consultation Page Styles */
+
+.hero-small__content {
+  max-width: 800px;
+}
+
+.booking-card {
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 4px;
+}
+
+.calendar-placeholder {
+  text-align: center;
+  opacity: 0.6;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 4px;
+}
+
+.form-compact .form-input {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-light);
+  font-family: var(--font-primary);
+  transition: all 0.3s ease;
+}
+
+.form-compact .form-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.form-compact select.form-input {
+  appearance: none;
+  cursor: pointer;
+}
+
+.contact-quick .label-small {
+  letter-spacing: 0.1em;
+}
+
+.contact-quick .h-3 {
+  transition: color 0.3s ease;
+}
+
+.contact-quick .h-3:hover {
+  color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+}

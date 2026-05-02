@@ -1,0 +1,77 @@
+/* caz-detaliu.css — Case roadmap styles */
+
+.case-hero {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.case-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap-xl);
+}
+
+/* ─── Roadmap Timeline ─── */
+.roadmap-section {
+  position: relative;
+}
+
+.roadmap-line {
+  position: absolute;
+  left: 50px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 1;
+}
+
+.roadmap-steps {
+  position: relative;
+  z-index: 2;
+  padding-left: 100px;
+}
+
+.roadmap-step {
+  position: relative;
+  margin-bottom: var(--gap-xxl);
+}
+
+.roadmap-dot {
+  position: absolute;
+  left: -54px;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 15px var(--color-accent);
+}
+
+.roadmap-content {
+  max-width: 600px;
+}
+
+.result-section .max-w-600 {
+  max-width: 600px;
+}
+
+.result-section .mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .case-meta-grid {
+    grid-template-columns: 1fr;
+    gap: var(--gap-md);
+  }
+  .roadmap-steps {
+    padding-left: 60px;
+  }
+  .roadmap-line {
+    left: 20px;
+  }
+  .roadmap-dot {
+    left: -44px;
+  }
+}

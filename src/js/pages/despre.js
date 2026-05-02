@@ -19,19 +19,32 @@ function initDespre() {
   initImageMask('.img-mask');
   initParallax();
 
-  /* ─── Sticky pin for founding story ─── */
-  // The pin-section uses CSS sticky via the class, or GSAP pin
+  /* ─── Sticky pin for founding story (Inverted) ─── */
   const pinSection = document.querySelector('.despre-story.pin-section');
   if (pinSection && !prefersReduced) {
+    const storyContent = pinSection.querySelector('.story-content');
     const storyImage = pinSection.querySelector('.story-image');
-    if (storyImage) {
-      // Make the image sticky while scrolling through the story text
+    
+    if (storyContent && storyImage) {
+      // Pin the text content
       ScrollTrigger.create({
         trigger: pinSection,
         start: 'top top',
         end: 'bottom bottom',
-        pin: storyImage,
+        pin: storyContent,
         pinSpacing: false,
+      });
+
+      // Add parallax to the image
+      gsap.to(storyImage.querySelector('.img-inner'), {
+        y: '20%',
+        ease: 'none',
+        scrollTrigger: {
+          trigger: pinSection,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true,
+        },
       });
     }
   }

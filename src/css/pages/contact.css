@@ -1,45 +1,95 @@
-/* contact.css — Contact page specific styles (Phase 11) */
-
-.contact-hero {
-  padding-top: calc(var(--section-v) * 1.5);
-  padding-bottom: var(--section-v);
-}
-
-.contact-grid {
+.contact-details-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--gap-lg);
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap-md);
+  margin-bottom: var(--gap-lg);
 }
 
-@media (min-width: 768px) {
-  .contact-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--gap-xl);
-  }
+.quick-actions {
+  display: flex;
+  gap: 10px;
 }
 
-.contact-info-block {
-  margin-bottom: var(--gap-md);
-}
-
-.contact-info-block .label-small {
-  color: var(--c-text-muted);
-  margin-bottom: var(--gap-xs);
-  display: block;
-}
-
-.map-placeholder {
+.map-wrapper {
   width: 100%;
-  height: 300px;
-  background-color: var(--c-mist);
-  margin-top: var(--gap-lg);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--c-border);
+}
+
+.premium-map {
+  height: 450px;
+  position: relative;
+  background: var(--c-bg-light);
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
-.map-placeholder svg {
-  width: 32px;
-  height: 32px;
-  color: var(--c-stone);
+.map-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+  filter: grayscale(1) invert(1);
+}
+
+.map-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-out);
+  z-index: 2;
+}
+
+.premium-map:hover .map-overlay {
+  opacity: 1;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 4px;
+}
+
+.form-premium .field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-premium input, 
+.form-premium textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--c-border);
+  padding: 12px 0;
+  color: var(--c-white);
+  font-family: var(--f-body);
+  transition: border-color 0.3s ease;
+}
+
+.form-premium input:focus, 
+.form-premium textarea:focus {
+  outline: none;
+  border-color: var(--c-white);
+}
+
+@media (max-width: 768px) {
+  .contact-details-grid {
+    grid-template-columns: 1fr;
+  }
+  .premium-map {
+    height: 300px;
+  }
 }

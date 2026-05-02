@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arii de practică — SEVER & ASOCIAȚII</title>
-  <meta name="description" content="Sever & Asociații oferă servicii juridice în drept corporativ, drept imobiliar și dreptul muncii la nivel de elită.">
+  <title>Due Diligence Complex | SEVER & ASOCIAȚII</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -16,27 +15,14 @@
   <link rel="stylesheet" href="/src/css/components/cursor.css">
   <link rel="stylesheet" href="/src/css/components/footer.css">
   <link rel="stylesheet" href="/src/css/components/buttons.css">
-  <link rel="stylesheet" href="/src/css/components/cards.css">
-  <link rel="stylesheet" href="/src/css/pages/practici.css">
+  <link rel="stylesheet" href="/src/css/pages/caz-detaliu.css">
 </head>
-<body data-page="practici">
+<body data-page="caz-detaliu">
 
-  <!-- Cursor elements — required on every page -->
   <div id="cursor-dot" aria-hidden="true"></div>
   <div id="cursor-ring" aria-hidden="true"></div>
-
-  <!-- Page transition overlay — required on every page -->
   <div id="page-overlay" aria-hidden="true"></div>
 
-  <!-- Scroll-to-explore indicator -->
-  <div class="scroll-hint" aria-hidden="true">
-    <span class="scroll-hint__label">Derulează</span>
-    <svg class="scroll-hint__arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="1.5"/>
-    </svg>
-  </div>
-
-  <!-- Navigation -->
   <nav id="nav-island" role="navigation" aria-label="Navigare principală">
     <div class="nav-logo"><a href="/" data-scramble>S&amp;A</a></div>
     <ul class="nav-links">
@@ -46,66 +32,81 @@
     </ul>
     <button class="nav-cta" data-cursor aria-label="Solicită o consultație">Consultație</button>
     <button class="nav-hamburger" aria-label="Meniu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <!-- Page content -->
   <main>
-    <!-- S1: Hero + Practice Areas Cards -->
-    <section class="section section--hero practici-hero">
+    <section class="section case-hero pt-xxl pb-xl">
       <div class="container">
-        <div class="label-small h-label reveal-text mb-4">ARII DE PRACTICĂ</div>
-        <h1 class="h-display reveal-text">
-          Trei domenii.<br>
-          Fiecare la<br>
-          nivel de elită.
-        </h1>
-        
-        <div class="grid-3 practici-grid">
-          <!-- CARD 1: Drept Corporativ -->
-          <a href="/practici/corporativ.html" class="card-practice" data-cursor>
-            <div class="img-mask">
-              <img src="/images/practici_corporativ_1777198315247.png" alt="Drept Corporativ" class="img-inner" loading="lazy">
-            </div>
-            <h3 class="h-3 reveal-text mt-2">Drept Corporativ</h3>
-            <p class="body-text reveal-text mt-1">Structuri legale care rezistă presiunii.</p>
-            <div class="card-stat mt-4">
-              <span class="label-small reveal-text">Află mai mult →</span>
-            </div>
-          </a>
-
-          <!-- CARD 2: Drept Imobiliar -->
-          <a href="/practici/imobiliar.html" class="card-practice" data-cursor>
-            <div class="img-mask">
-              <img src="/images/practici_imobiliar_1777198328188.png" alt="Drept Imobiliar" class="img-inner" loading="lazy">
-            </div>
-            <h3 class="h-3 reveal-text mt-2">Drept Imobiliar</h3>
-            <p class="body-text reveal-text mt-1">Fiecare proprietate are un risc ascuns.</p>
-            <div class="card-stat mt-4">
-              <span class="label-small reveal-text">Află mai mult →</span>
-            </div>
-          </a>
-
-          <!-- CARD 3: Dreptul Muncii -->
-          <a href="/practici/munca.html" class="card-practice" data-cursor>
-            <div class="img-mask">
-              <img src="/images/practici_munca_1777198344213.png" alt="Dreptul Muncii" class="img-inner" loading="lazy">
-            </div>
-            <h3 class="h-3 reveal-text mt-2">Dreptul Muncii</h3>
-            <p class="body-text reveal-text mt-1">Relațiile de muncă au regulile lor.</p>
-            <div class="card-stat mt-4">
-              <span class="label-small reveal-text">Află mai mult →</span>
-            </div>
-          </a>
+        <a href="/cazuri.html" class="label-small mb-md inline-block" data-cursor>&larr; ÎNAPOI LA CAZURI</a>
+        <h1 class="h-display reveal-text">Due diligence pentru <span class="italic">complex rezidențial.</span></h1>
+        <div class="case-meta-grid mt-lg reveal-text">
+          <div class="meta-item">
+            <span class="label-small text-muted">CLIENT</span>
+            <p class="body-text">Dezvoltator Imobiliar</p>
+          </div>
+          <div class="meta-item">
+            <span class="label-small text-muted">DURATĂ</span>
+            <p class="body-text">4 Săptămâni</p>
+          </div>
+          <div class="meta-item">
+            <span class="label-small text-muted">STATUS</span>
+            <p class="body-text">Finalizat cu succes</p>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section roadmap-section py-xxl bg-dark">
+      <div class="container relative">
+        <div class="roadmap-line" aria-hidden="true"></div>
+        <div class="roadmap-steps">
+          <div class="roadmap-step reveal-text">
+            <div class="roadmap-dot"></div>
+            <div class="roadmap-content">
+              <span class="label-small">SĂPTĂMÂNA 1</span>
+              <h2 class="h-2 mt-xs">Analiza Titlurilor</h2>
+              <p class="body-text text-muted mt-sm">Verificarea istoricului proprietății pentru 14 titluri de proprietate. Identificarea unei sarcini ascunse neînregistrate.</p>
+            </div>
+          </div>
+          <div class="roadmap-step reveal-text">
+            <div class="roadmap-dot"></div>
+            <div class="roadmap-content">
+              <span class="label-small">SĂPTĂMÂNA 2-3</span>
+              <h2 class="h-2 mt-xs">Securizarea Tranzacției</h2>
+              <p class="body-text text-muted mt-sm">Efectuarea demersurilor necesare pentru radierea sarcinii și negocierea unor clauze de garanție suplimentare cu vânzătorul.</p>
+            </div>
+          </div>
+          <div class="roadmap-step reveal-text">
+            <div class="roadmap-dot"></div>
+            <div class="roadmap-content">
+              <span class="label-small">SĂPTĂMÂNA 4</span>
+              <h2 class="h-2 mt-xs">Finalizare</h2>
+              <p class="body-text text-muted mt-sm">Semnarea contractului de vânzare-cumpărare în formă autentică și asigurarea intabulării corecte în Cartea Funciară.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section result-section py-xxl">
+      <div class="container text-center">
+        <h2 class="h-label label-small mb-md">REZULTAT FINAL</h2>
+        <h3 class="h-1 mb-lg">Investiție securizată și risc major eliminat înainte de finalizarea tranzacției.</h3>
+      </div>
+    </section>
+
+    <section class="section section--dark cta-section py-xxl">
+      <div class="container text-center">
+        <h2 class="h-2 reveal-text mb-md">Aveți o situație similară?</h2>
+        <a href="/consultatie.html" class="btn-primary reveal-text" data-cursor>
+          <span>Programează o consultație &rarr;</span>
+        </a>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-top">
@@ -135,16 +136,14 @@
       </div>
       <div class="footer-bottom">
         <span>© 2026 Sever &amp; Asociații. Toate drepturile rezervate.</span>
-        <a href="#">Politică de confidențialitate</a>
       </div>
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script type="module" src="/src/js/core/lenis.js"></script>
   <script type="module" src="/src/js/core/cursor.js"></script>
   <script type="module" src="/src/js/core/transitions.js"></script>
   <script type="module" src="/src/js/core/nav.js"></script>
-  <script type="module" src="/src/js/pages/practici.js"></script>
+  <script type="module" src="/src/js/pages/caz-detaliu.js"></script>
 </body>
 </html>

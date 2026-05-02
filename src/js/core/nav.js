@@ -31,6 +31,7 @@ function initNav() {
       'munca': '/practici.html',
       'cazuri': '/cazuri.html',
       'contact': '/contact.html',
+      'consultatie': '/consultatie.html',
     };
 
     const activeHref = linkMap[currentPage];
@@ -83,9 +84,9 @@ function initNav() {
       // Use page transition if available
       const navigateTo = window.__navigateTo;
       if (navigateTo) {
-        navigateTo('/contact.html');
+        navigateTo('/consultatie.html');
       } else {
-        window.location.href = '/contact.html';
+        window.location.href = '/consultatie.html';
       }
     });
   }

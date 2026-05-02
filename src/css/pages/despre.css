@@ -79,6 +79,11 @@
 }
 
 /* CTA Section */
+.cta-section {
+  position: relative;
+  z-index: 10;
+}
+
 .cta-container {
   display: flex;
   flex-direction: column;

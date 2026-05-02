@@ -8,7 +8,7 @@
 .site-footer {
   background-color: var(--c-ink);
   color: var(--c-white);
-  padding-top: var(--section-v);
+  padding-top: var(--gap-xl);
   padding-bottom: var(--gap-lg);
 }
 
@@ -29,7 +29,7 @@
 
 .footer-logo {
   font-family: var(--f-display);
-  font-size: var(--t-h3);
+  font-size: var(--t-h2);
   font-weight: 300;
   letter-spacing: var(--ls-heading);
   color: var(--c-white);
