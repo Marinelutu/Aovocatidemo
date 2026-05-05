@@ -8,13 +8,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/assets/main-sMmlREeF.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/text-reveal-Ct0iDs2O.js">
-  <link rel="modulepreload" crossorigin href="/assets/counters-DdjGs3__.js">
-  <link rel="modulepreload" crossorigin href="/assets/image-mask-crB6LXFN.js">
-  <link rel="modulepreload" crossorigin href="/assets/parallax-vFweVcQT.js">
-  <link rel="stylesheet" crossorigin href="/assets/text-reveal-BRbngYcL.css">
-  <link rel="stylesheet" crossorigin href="/assets/main-DkrZDxLB.css">
+  <script type="module" crossorigin src="/assets/main-Debr9Ugg.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/nav-BTFV5Nwc.js">
+  <link rel="modulepreload" crossorigin href="/assets/text-reveal-DDGSQ2XV.js">
+  <link rel="modulepreload" crossorigin href="/assets/counters-3Uh-mMRe.js">
+  <link rel="modulepreload" crossorigin href="/assets/image-mask-BEI1Wzon.js">
+  <link rel="modulepreload" crossorigin href="/assets/parallax-DyC-Bp6v.js">
+  <link rel="stylesheet" crossorigin href="/assets/nav-YF1Kbgaw.css">
+  <link rel="stylesheet" crossorigin href="/assets/main-CdXxA_uj.css">
   <link rel="stylesheet" crossorigin href="/assets/cards-1S0YHkgm.css">
 </head>
 <body data-page="home">
@@ -41,9 +42,13 @@
       <li><a href="/despre.html" data-scramble>Despre</a></li>
       <li><a href="/practici.html" data-scramble>Practici</a></li>
       <li><a href="/cazuri.html" data-scramble>Cazuri</a></li>
-      <li><a href="/contact.html" data-scramble>Contact</a></li>
     </ul>
     <button class="nav-cta" data-cursor aria-label="Solicită o consultație">Consultație</button>
+        <a href="tel:+40721000000" class="nav-phone" aria-label="Sunați acum" data-tooltip="+40 721 000 000">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11 21 3 13 3 5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
     <button class="nav-hamburger" aria-label="Meniu" aria-expanded="false">
       <span></span>
       <span></span>
@@ -57,7 +62,7 @@
     <section class="section hero-home">
       <div class="hero-bg">
         <img src="/images/hero_fallback_office.png" class="hero-fallback" alt="Interior cabinet avocatură">
-        <video autoplay muted loop playsinline class="hero-video">
+        <video autoplay muted loop class="hero-video">
           <source src="/videos/8061570-uhd_3840_2160_25fps.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
@@ -74,7 +79,7 @@
           dumneavoastră cu precizie și fără excepții.
         </p>
         <div class="mt-md">
-          <a href="/contact.html" class="btn-primary" data-cursor>
+          <a href="/consultatie.html" class="btn-primary" data-cursor>
             <span>Solicită o consultație →</span>
           </a>
         </div>
@@ -94,7 +99,7 @@
     <!-- [S3] Practice areas -->
     <section class="section">
       <div class="container">
-        <div class="label-small mb-lg">ARII DE PRACTICĂ</div>
+        <h2 class="h-2 mb-lg">Arii de Practică</h2>
         <div class="grid-3 cards-grid">
           
           <a href="/practici/corporativ.html" class="card-practice" data-cursor>
@@ -137,23 +142,40 @@
     <!-- [S4] Numbers -->
     <section class="section section--dark stats-section">
       <div class="container">
-        <div class="label-small mb-lg text-center">ÎN CIFRE</div>
-        <div class="grid-4 text-center">
-          <div class="stat-item">
-            <div class="h-1 mb-xs"><span class="counter" data-target="14">0</span></div>
-            <div class="body-text">Ani de practică</div>
+        <div class="stats-grid">
+          <!-- Left: Hero Stat -->
+          <div class="stats-hero">
+            <div class="stats-hero__main">
+              <span class="counter" data-target="98" data-suffix="%">0</span>
+              <span class="stats-hero__label">Succes juridic</span>
+            </div>
+            <div class="stats-hero__separator"></div>
+            <p class="body-text stats-hero__desc">
+              Fiecare dosar este tratat cu precizie chirurgicală. Nu promitem victorii imposibile, dar garantăm cea mai riguroasă apărare disponibilă pe piața din Iași.
+            </p>
           </div>
-          <div class="stat-item">
-            <div class="h-1 mb-xs"><span class="counter" data-target="120" data-suffix="+">0</span></div>
-            <div class="body-text">Companii cliente</div>
+
+          <!-- Middle: Stats List -->
+          <div class="stats-list">
+            <div class="stats-list__item">
+              <span class="label-small">ANI DE EXPERIENȚĂ</span>
+              <span class="h-3 counter" data-target="14">0</span>
+            </div>
+            <div class="stats-list__item">
+              <span class="label-small">COMPANII REPREZENTATE</span>
+              <span class="h-3 counter" data-target="120" data-suffix="+">0</span>
+            </div>
+            <div class="stats-list__item">
+              <span class="label-small">TIMP DE RĂSPUNS</span>
+              <span class="h-3">&lt;24h</span>
+            </div>
           </div>
-          <div class="stat-item">
-            <div class="h-1 mb-xs"><span class="counter" data-target="98" data-suffix="%">0</span></div>
-            <div class="body-text">Cazuri soluționate favorabil</div>
-          </div>
-          <div class="stat-item">
-            <div class="h-1 mb-xs"><span class="counter" data-target="2">0</span></div>
-            <div class="body-text">Avocați. Toată atenția pentru dumneavoastră.</div>
+
+          <!-- Right: Decorative Bars -->
+          <div class="stats-decor" aria-hidden="true">
+            <div class="decor-bar"></div>
+            <div class="decor-bar"></div>
+            <div class="decor-bar"></div>
           </div>
         </div>
       </div>
@@ -161,6 +183,9 @@
 
     <!-- [S5] About Preview -->
     <section class="section pin-section about-preview">
+      <!-- Flow Field Animation Container -->
+      <div class="flow-field-bg" data-mode="light" aria-hidden="true"></div>
+      
       <div class="container grid-2 align-center">
         <div class="about-img">
           <div class="img-mask">
@@ -187,22 +212,28 @@
 
     <!-- [S6] Featured Case -->
     <section class="section featured-case">
-      <div class="container">
-        <div class="label-small mb-sm">CAZ RECENT</div>
-        <h2 class="h-2 mb-md max-w-lg">
-          Restructurarea unui grup de 12 companii<br>
-          în 90 de zile.
-        </h2>
-        <div class="case-meta mb-lg flex gap-md">
-          <span class="label-small text-muted">DREPT CORPORATIV</span>
-          <span class="body-text text-muted">— Finalizat fără litigii</span>
+      <div class="container grid-2 align-center">
+        <div class="case-text">
+          <div class="label-small mb-sm">CAZ RECENT</div>
+          <h2 class="h-1 mb-md text-reveal">
+            Restructurarea unui grup de 12 companii în 90 de zile.
+          </h2>
+          <p class="body-text mb-lg text-reveal">
+            Am implementat o strategie juridică integrată care a permis consolidarea operațiunilor grupului fără a întrerupe activitatea comercială, evitând complet litigiile post-fuziune și optimizând structura fiscală.
+          </p>
+          <div class="case-meta mb-lg flex gap-md text-reveal">
+            <span class="label-small text-muted">DREPT CORPORATIV</span>
+            <span class="body-text text-muted">— Finalizat cu succes</span>
+          </div>
+          <a href="/cazuri/restructurare-grup.html" class="btn-secondary" data-cursor>
+            <span>Vezi detalii caz →</span>
+          </a>
         </div>
-        <a href="/cazuri.html" class="btn-secondary mb-xl" data-cursor>
-          <span>Toate cazurile →</span>
-        </a>
-      </div>
-      <div class="case-image-wrapper mt-md overflow-hidden h-60vh">
-        <img src="/images/featured_case.png" alt="Caz recent" data-speed="0.7" class="parallax-img w-full h-full object-cover" loading="lazy">
+        <div class="case-img-container">
+          <div class="img-mask reveal-on-scroll">
+            <img src="/images/featured_case.png" alt="Caz recent" class="img-inner" loading="lazy">
+          </div>
+        </div>
       </div>
     </section>
 
@@ -216,7 +247,7 @@
               <div class="carousel-author">— Mihai P., CEO, grup de retail</div>
             </div>
             <div class="carousel-slide">
-              <p class="carousel-quote">"Am apelat la Elena Constantin pentru un litigiu imobiliar complicat. A rezolvat situația în 3 luni. Nu m-am așteptat la atât de repede."</p>
+              <p class="carousel-quote">"Am apelat la Elena Constantin pentru un litigiu imobiliar complicat. A rezolvat situația în 3 luni. Nu m-am așteptat să se rezolve atât de repede."</p>
               <div class="carousel-author">— Dana L., investitor imobiliar</div>
             </div>
             <div class="carousel-slide">
@@ -252,7 +283,7 @@
           Fără angajamente. Fără costuri ascunse.
         </p>
         <div class="mb-sm">
-          <a href="/contact.html" class="btn-primary" data-cursor>
+          <a href="/consultatie.html" class="btn-primary" data-cursor>
             <span>Consultație inițială →</span>
           </a>
         </div>
@@ -280,12 +311,11 @@
             <span class="footer-nav-label">Cabinet</span>
             <a href="/despre.html">Despre noi</a>
             <a href="/cazuri.html">Cazuri</a>
-            <a href="/contact.html">Contact</a>
           </div>
           <div class="footer-nav-col">
             <span class="footer-nav-label">Contact</span>
             <a href="tel:+40721000000">+40 721 000 000</a>
-            <a href="mailto:office@severasociati.ro">office@severasociati.ro</a>
+            <a href="mailto:office@severasociatii.ro">office@severasociatii.ro</a>
             <span>Str. Unirii 12, Iași</span>
           </div>
         </nav>
