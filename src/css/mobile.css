@@ -333,9 +333,7 @@
     /* Allow natural touch scroll on mobile */
     overflow-x: auto;
     overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
-    scrollbar-width: none;
   }
 
   .h-scroll-section::-webkit-scrollbar {
@@ -395,7 +393,7 @@
 
   /* Booking section */
   .booking-card {
-    min-height: auto;
+    min-height: initial;
     padding: var(--gap-sm);
   }
 
@@ -799,7 +797,7 @@
 
   /* Improve readability */
   .body-text {
-    hyphens: auto;
     -webkit-hyphens: auto;
+    hyphens: auto;
   }
 }

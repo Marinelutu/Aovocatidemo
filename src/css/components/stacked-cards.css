@@ -200,7 +200,7 @@
 @media (prefers-reduced-motion: reduce) {
   .stacked-card {
     position: relative;
-    min-height: auto;
+    min-height: initial;
     padding: var(--gap-xl) 0;
   }
   
