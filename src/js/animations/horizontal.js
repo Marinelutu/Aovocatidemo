@@ -22,6 +22,8 @@ const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').mat
 
 /**
  * Initialize horizontal scroll on .h-scroll-section elements.
+ * Uses absolute pixel xPercent based on (scrollWidth - viewportWidth)
+ * to ensure the scroll stops exactly when the last card is fully visible.
  */
 export function initHorizontalScroll() {
   if (prefersReduced) return;
@@ -35,14 +37,18 @@ export function initHorizontalScroll() {
     const panels = track.querySelectorAll('.h-panel');
     if (panels.length === 0) return;
 
+    /* Calculate exact pixel distance to scroll */
+    const getScrollAmount = () => -(track.scrollWidth - window.innerWidth);
+
     gsap.to(track, {
-      xPercent: -100 * (panels.length - 1),
+      x: getScrollAmount,
       ease: 'none',
       scrollTrigger: {
         trigger: section,
         pin: true,
         scrub: 1,
-        end: () => `+=${track.offsetWidth}`,
+        invalidateOnRefresh: true,
+        end: () => `+=${track.scrollWidth - window.innerWidth}`,
       },
     });
   });

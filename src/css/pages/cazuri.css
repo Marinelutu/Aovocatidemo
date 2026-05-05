@@ -1,5 +1,6 @@
-/* cazuri.css — Cases page specific styles (Phase 10) */
+/* cazuri.css — Cases page — Premium cinematic archive (Phase 10 revamp) */
 
+/* ─── Hero ─── */
 .cazuri-hero {
   padding-top: calc(var(--section-v) * 1.5);
   padding-bottom: var(--section-v);
@@ -10,11 +11,31 @@
   align-items: flex-end;
 }
 
+/* ─── Archive Header ─── */
+.archive-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0 var(--container-x) var(--gap-lg);
+}
+
+.archive-header .label-small {
+  color: var(--c-text-muted);
+}
+
+.archive-count {
+  font-family: var(--f-display);
+  font-size: var(--t-h3);
+  color: var(--c-text-muted);
+  letter-spacing: var(--ls-heading);
+}
+
+/* ─── Horizontal scroll section ─── */
 .h-scroll-section {
   width: 100%;
   overflow: hidden;
   background-color: var(--c-bg);
-  padding: var(--section-v) 0;
+  padding: var(--gap-md) 0 var(--section-v);
 }
 
 .h-scroll-track {
@@ -22,20 +43,29 @@
   width: max-content;
   padding: 0 var(--container-x);
   gap: var(--gap-md);
+  will-change: transform;
 }
 
+/* ─── Card panels ─── */
 .h-panel {
-  width: 400px;
+  width: 580px;
+  height: 440px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
 }
 
+/* ─── Cinematic Case Card ─── */
 .case-card {
-  background: var(--c-bg);
-  border: 1px solid var(--c-border);
-  padding: var(--gap-md);
-  transition: transform var(--dur-fast) var(--ease-out);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--c-ink);
+  cursor: pointer;
+  transition: transform var(--dur-fast) var(--ease-out),
+              box-shadow var(--dur-fast) var(--ease-out);
 }
 
 a.case-card {
@@ -44,44 +74,171 @@ a.case-card {
 }
 
 .case-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.35),
+              0 0 0 1px rgba(253, 184, 19, 0.12);
+}
+
+/* ── Card image ── */
+.case-card__image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.case-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease-out),
+              filter 0.8s var(--ease-out);
+  filter: brightness(0.55) saturate(0.85);
+}
+
+.case-card:hover .case-card__image img {
+  transform: scale(1.06);
+  filter: brightness(0.4) saturate(0.7);
+}
+
+/* ── Card gradient overlay ── */
+.case-card__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(10, 10, 10, 0.15) 35%,
+    rgba(10, 10, 10, 0.85) 100%
+  );
+  pointer-events: none;
+}
+
+/* ── Card content ── */
+.case-card__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  padding: var(--gap-md) var(--gap-md) calc(var(--gap-md) + 4px);
 }
 
 .case-category {
-  color: var(--c-text-muted);
+  color: var(--c-gold);
   margin-bottom: var(--gap-xs);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
 .case-title {
+  color: var(--c-white);
   margin-bottom: var(--gap-sm);
+  font-family: var(--f-display);
+  font-size: clamp(22px, 2.2vw, 30px);
+  font-weight: 400;
+  line-height: var(--lh-heading);
+  letter-spacing: var(--ls-heading);
 }
 
 .case-detail {
-  color: var(--c-text-muted);
-  margin-bottom: var(--gap-md);
-  flex-grow: 1;
+  color: var(--c-mist);
+  margin-bottom: var(--gap-sm);
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+/* ── Card footer (year + arrow) ── */
+.case-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--gap-sm);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .case-year {
-  margin-top: auto;
-  align-self: flex-start;
-  padding-top: var(--gap-xs);
-  border-top: 1px solid var(--c-border);
-  width: 100%;
+  color: var(--c-mist);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  opacity: 0.6;
+}
+
+.case-card__arrow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--c-gold);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 0.4s var(--ease-out),
+              transform 0.4s var(--ease-out);
+}
+
+.case-card:hover .case-card__arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.case-card__arrow svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ── Film grain overlay on cards ── */
+.case-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 128px 128px;
+  pointer-events: none;
+  border-radius: 6px;
 }
 
 /* ─── Responsive ─── */
+@media (max-width: 1024px) {
+  .h-panel {
+    width: 460px;
+    height: 380px;
+  }
+}
+
 @media (max-width: 768px) {
   .cazuri-hero .grid-2 {
     grid-template-columns: 1fr;
   }
 
-  .h-panel {
-    width: 320px;
+  .archive-header {
+    flex-direction: column;
+    gap: var(--gap-xs);
   }
 
-  .case-card {
+  .h-panel {
+    width: 340px;
+    height: 340px;
+  }
+
+  .case-title {
+    font-size: 20px;
+  }
+
+  .case-card__content {
     padding: var(--gap-sm);
+  }
+
+  .case-card__arrow {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
@@ -92,6 +249,16 @@ a.case-card {
   }
   .case-card:hover {
     transform: none;
+    box-shadow: none;
+  }
+  .case-card__image img {
+    transition: none;
+  }
+  .case-card:hover .case-card__image img {
+    transform: none;
+    filter: brightness(0.55) saturate(0.85);
+  }
+  .case-card__arrow {
+    transition: none;
   }
 }
-
