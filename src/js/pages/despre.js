@@ -18,10 +18,12 @@ function initDespre() {
   initTextReveal('.reveal-text');
   initImageMask('.img-mask');
   initParallax();
-
-  /* ─── Sticky pin for founding story (Inverted) ─── */
+  
+  /* ─── Sticky pin for founding story (Inverted) - Only on Desktop ─── */
   const pinSection = document.querySelector('.despre-story.pin-section');
-  if (pinSection && !prefersReduced) {
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  
+  if (pinSection && !prefersReduced && !isMobile) {
     const storyContent = pinSection.querySelector('.story-content');
     const storyImage = pinSection.querySelector('.story-image');
     

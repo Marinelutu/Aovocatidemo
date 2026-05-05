@@ -30,8 +30,9 @@ function initHome() {
   const flowFieldContainer = document.querySelector('.flow-field-bg');
   if (flowFieldContainer) {
     const mode = flowFieldContainer.getAttribute('data-mode') || 'light';
+    const isMobileFF = window.matchMedia('(max-width: 768px)').matches;
     new FlowField(flowFieldContainer, { 
-      agentCount: 600, 
+      agentCount: isMobileFF ? 200 : 600, 
       flowScale: 0.004, 
       mode: mode 
     });

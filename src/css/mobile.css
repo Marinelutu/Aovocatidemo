@@ -1,0 +1,805 @@
+/*
+ * mobile.css — Comprehensive mobile responsiveness
+ * SEVER & ASOCIAȚII
+ * Additive-only: enhances mobile experience without breaking desktop.
+ * Breakpoints: 768px (tablet), 480px (small phone)
+ */
+
+/* ══════════════════════════════════════════════
+   ─── GLOBAL / TOKENS MOBILE OVERRIDES ───
+   ══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  :root {
+    --section-v: clamp(60px, 12vh, 120px);
+    --container-x: clamp(20px, 5vw, 32px);
+    --gap-lg: 40px;
+    --gap-xl: 72px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-v: clamp(48px, 10vh, 80px);
+    --container-x: 20px;
+    --gap-lg: 32px;
+    --gap-xl: 56px;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   ─── TYPOGRAPHY MOBILE ───
+   ══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .h-display {
+    font-size: clamp(36px, 10vw, 56px);
+  }
+
+  .h-display--italic {
+    font-size: clamp(36px, 10vw, 56px);
+  }
+
+  .h-1 {
+    font-size: clamp(28px, 7vw, 44px);
+  }
+
+  .h-2 {
+    font-size: clamp(22px, 5.5vw, 36px);
+  }
+
+  .h-3 {
+    font-size: clamp(18px, 4vw, 24px);
+  }
+
+  .h-sub {
+    font-size: clamp(14px, 3.5vw, 17px);
+  }
+
+  .body-text {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .h-display,
+  .h-display--italic {
+    font-size: clamp(30px, 9vw, 44px);
+  }
+
+  .h-1 {
+    font-size: clamp(24px, 7vw, 36px);
+  }
+
+  .body-text {
+    font-size: 14px;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   ─── HERO SECTIONS (ALL PAGES) ───
+   ══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  /* Generic hero padding adjustments */
+  .section--hero,
+  .practici-hero,
+  .despre-hero,
+  .cazuri-hero {
+    padding-top: calc(var(--section-v) + 80px);
+  }
+
+  /* Hero br tags — allow text to flow naturally on mobile */
+  .hero-home .h-display br,
+  .despre-hero .h-display br,
+  .practici-hero .h-display br {
+    display: none;
+  }
+
+  /* Hero subtitle — don't force line breaks on mobile */
+  .h-sub br,
+  .hero-content .h-sub br {
+    display: none;
+  }
+
+  /* Body text linebreaks in hero contexts */
+  .hero-right .body-text br,
+  .despre-hero .body-text br {
+    display: none;
+  }
+
+  /* Hero fallback image — simpler animation on mobile */
+  .hero-fallback {
+    width: 100%;
+    height: 100%;
+    animation: heroPanMobile 30s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroPanMobile {
+    0% { transform: scale(1.05); }
+    100% { transform: scale(1.1); }
+  }
+
+  /* Hero video — hide on mobile for performance */
+  .hero-video {
+    display: none;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(10, 10, 10, 0.7) 0%,
+      rgba(10, 10, 10, 0.85) 100%
+    );
+  }
+}
+
+/* ══════════════════════════════════════════════
+   ─── HOMEPAGE SECTIONS ───
+   ══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  /* About preview — stack vertically */
+  .about-preview .grid-2 {
+    gap: var(--gap-md);
+  }
+
+  .about-text {
+    padding-left: 0 !important;
+  }
+
+  .about-text br {
+    display: none;
+  }
+
+  .about-img {
+    aspect-ratio: 3/4;
+    max-height: 50vh;
+  }
+
+  /* Featured case — stack and simplify */
+  .featured-case .grid-2 {
+    gap: var(--gap-md);
+  }
+
+  .featured-case .case-text {
+    max-width: 100%;
+    order: 2;
+  }
+
+  .featured-case .case-img-container {
+    order: 1;
+    aspect-ratio: 16/9;
+  }
+
+  .featured-case .body-text br {
+    display: none;
+  }
+
+  /* CTA section */
+  .cta-section .h-1 br,
+  .cta-section .h-2 br {
+    display: none;
+  }
+
+  .cta-section .h-sub br {
+    display: none;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   ─── DESPRE (ABOUT) PAGE ───
+   ══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .despre-hero {
+    padding-top: calc(var(--section-v) + 60px);
+  }
+
+  .despre-hero .h-display br {
+    display: none;
+  }
+
+  .despre-hero .body-text br {
+    display: none;
+  }
+
+  /* Story section */
+  .despre-story .story-content {
+    padding-top: var(--gap-md);
+  }
+
+  .story-image {
+    aspect-ratio: 16/10;
+    max-height: 40vh;
+  }
+
+  /* Lawyer profiles */
+  .despre-lawyer .container {
+    gap: var(--gap-lg);
+  }
+
+  .lawyer-portrait {
+    aspect-ratio: 4/5;
+    max-height: 50vh;
+  }
+
+  .despre-lawyer .grid-2.lawyer-info {
+    grid-template-columns: 1fr;
+    gap: var(--gap-md);
+  }
+
+  .lawyer-header {
+    margin-bottom: var(--gap-lg);
+  }
+
+  /* Lawyer body text linebreaks */
+  .lawyer-details .body-text br {
+    display: none;
+  }
+
+  /* Values cards — ensure proper stacking */
+  .value-card {
+    padding: var(--gap-sm);
+  }
+}
+
+/* ══════════════════════════════════════════════
+   ─── PRACTICI (PRACTICE AREAS) ───
+   ══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .practici-hero {
+    padding-top: calc(var(--section-v) + 60px);
+  }
+
+  .practici-hero .h-display br {
+    display: none;
+  }
+
+  /* Practice cards in hub */
+  .practici-grid.grid-3 {
+    gap: var(--gap-lg);
+  }
+
+  .card-practice .img-mask {
+    aspect-ratio: 16/10;
+  }
+
+  /* Sticky pin section — reduce height on mobile */
+  .pin-section-practici .grid-2 {
+    grid-template-columns: 1fr;
+    gap: var(--gap-lg);
+  }
+
+  .sticky-img {
+    height: 40vh;
+    border-radius: 4px;
+  }
+
+  .sticky-img-col {
+    order: 1;
+  }
+
+  .sticky-text-col {
+    order: 2;
+  }
+
+  .practice-list {
+    margin-top: var(--gap-sm);
+  }
+
+  .scroll-list-item {
+    font-size: clamp(16px, 4vw, 20px);
+  }
+
+  /* Process cards — already handled in practici.css */
+
+  /* Case archive preview on practice pages */
+  .cases-archive {
+    padding-top: var(--gap-lg);
+    padding-bottom: var(--gap-lg);
+  }
+
+  .case-row__meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .case-row__outcome {
+    font-size: 13px;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   ─── CAZURI (CASES) PAGE ───
+   ══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .cazuri-hero {
+    padding-top: calc(var(--section-v) + 60px);
+    padding-bottom: var(--gap-lg);
+  }
+
+  .cazuri-hero .hero-right .body-text br {
+    display: none;
+  }
+
+  /* Horizontal scroll — make cards swipeable on mobile */
+  .h-scroll-section {
+    padding: var(--gap-sm) 0 var(--gap-xl);
+    /* Allow natural touch scroll on mobile */
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .h-scroll-section::-webkit-scrollbar {
+    display: none;
+  }
+
+  .h-scroll-track {
+    padding: 0 var(--container-x);
+    gap: var(--gap-sm);
+  }
+
+  .h-panel {
+    width: 85vw;
+    min-width: 280px;
+    height: auto;
+    min-height: 320px;
+    scroll-snap-align: center;
+  }
+
+  /* Show arrow on mobile since no hover */
+  .case-card__arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Case cards — touch-friendly */
+  .case-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .case-card:active {
+    transform: scale(0.98);
+    transition: transform 0.15s ease;
+  }
+}
+
+@media (max-width: 480px) {
+  .h-panel {
+    width: 88vw;
+    min-height: 300px;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   ─── CONSULTATIE PAGE ───
+   ══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .hero-small__content {
+    max-width: 100%;
+  }
+
+  .hero-small__content .h-display br {
+    display: none;
+  }
+
+  /* Booking section */
+  .booking-card {
+    min-height: auto;
+    padding: var(--gap-sm);
+  }
+
+  .booking-card.glass-card.p-md {
+    padding: var(--gap-sm);
+  }
+
+  /* Calendar grid */
+  .calendar-grid {
+    gap: 6px !important;
+  }
+
+  .calendar-day {
+    font-size: 0.8rem !important;
+  }
+
+  /* Time slots */
+  .time-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+
+  .time-slot {
+    padding: 12px 8px !important;
+    font-size: 14px !important;
+  }
+
+  /* Info card */
+  .info-card.glass-card.p-md {
+    padding: var(--gap-sm);
+  }
+
+  /* Contact quick section */
+  .contact-quick {
+    margin-top: var(--gap-md);
+  }
+
+  .contact-quick .h-3 {
+    font-size: clamp(16px, 4vw, 20px);
+    word-break: break-all;
+  }
+
+  /* Form inputs */
+  .form-compact .form-input {
+    padding: 14px 12px;
+    font-size: 16px; /* Prevents iOS zoom on focus */
+  }
+}
+
+/* ══════════════════════════════════════════════
+   ─── CONTACT PAGE ───
+   ══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .quick-actions {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .form-premium input,
+  .form-premium textarea {
+    font-size: 16px; /* Prevents iOS zoom */
+    padding: 14px 0;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   ─── CAZ DETALIU (CASE DETAIL) ───
+   ══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .case-hero {
+    padding-top: calc(var(--section-v) + 60px);
+  }
+
+  .case-hero .h-display {
+    font-size: clamp(28px, 8vw, 44px);
+  }
+
+  /* Roadmap timeline — adjust positioning */
+  .roadmap-section {
+    padding-left: 0;
+  }
+
+  .roadmap-steps {
+    padding-left: 48px;
+  }
+
+  .roadmap-line {
+    left: 16px;
+  }
+
+  .roadmap-dot {
+    left: -36px;
+    width: 8px;
+    height: 8px;
+  }
+
+  .roadmap-content {
+    max-width: 100%;
+  }
+
+  .roadmap-step {
+    margin-bottom: var(--gap-lg);
+  }
+
+  /* Result section */
+  .result-section .h-1 {
+    font-size: clamp(22px, 5.5vw, 36px);
+  }
+}
+
+/* ══════════════════════════════════════════════
+   ─── STACKED CARDS MOBILE ───
+   ══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .stacked-header {
+    min-height: 60svh;
+  }
+
+  .stacked-header .h-1 br {
+    display: none;
+  }
+
+  .stacked-card {
+    min-height: 80svh;
+  }
+
+  .card-content {
+    max-width: 100%;
+    padding: var(--gap-md) var(--container-x);
+  }
+
+  .card-title-signature {
+    font-size: clamp(26px, 7vw, 40px);
+  }
+
+  .card-detail {
+    font-size: 14px;
+    max-width: 100%;
+  }
+
+  .card-label {
+    margin-bottom: var(--gap-sm);
+  }
+
+  .card-divider {
+    margin-bottom: var(--gap-sm);
+  }
+}
+
+/* ══════════════════════════════════════════════
+   ─── CAROUSEL MOBILE ───
+   ══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .carousel-container {
+    touch-action: pan-y;
+  }
+
+  .carousel-slide .carousel-quote {
+    font-size: clamp(20px, 5vw, 32px);
+    max-width: 100%;
+  }
+
+  .carousel-controls {
+    margin-top: var(--gap-md);
+    justify-content: center;
+  }
+
+  .carousel-prev,
+  .carousel-next {
+    width: 40px;
+    height: 40px;
+  }
+
+  .carousel-progress {
+    margin-top: var(--gap-sm);
+  }
+}
+
+/* ══════════════════════════════════════════════
+   ─── FOOTER MOBILE REFINEMENTS ───
+   ══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding-top: var(--gap-lg);
+    padding-bottom: var(--gap-md);
+  }
+
+  .footer-logo {
+    font-size: clamp(24px, 6vw, 36px);
+  }
+
+  .footer-nav {
+    width: 100%;
+  }
+
+  .footer-nav-col {
+    padding-bottom: var(--gap-sm);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .footer-nav-col:last-child {
+    border-bottom: none;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   ─── UTILITY OVERRIDES ───
+   ══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  /* Spacing utils — tighten on mobile */
+  .pt-xxl { padding-top: var(--gap-xl); }
+  .pb-xxl { padding-bottom: var(--gap-xl); }
+  .py-xxl {
+    padding-top: var(--gap-xl);
+    padding-bottom: var(--gap-xl);
+  }
+
+  .mb-xl { margin-bottom: var(--gap-lg); }
+  .mb-lg { margin-bottom: var(--gap-md); }
+
+  /* Padding utility used inline */
+  .p-md {
+    padding: var(--gap-sm);
+  }
+
+  /* Grid-2 on mobile — already handled in layout.css, reinforce */
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Text alignment on mobile */
+  .text-center-mobile {
+    text-align: center;
+  }
+
+  /* Prevent horizontal overflow */
+  body {
+    overflow-x: hidden;
+  }
+
+  main {
+    overflow-x: hidden;
+  }
+
+  /* Inline-block fix for back links */
+  .inline-block {
+    display: inline-block;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   ─── TOUCH INTERACTION ENHANCEMENTS ───
+   ══════════════════════════════════════════════ */
+
+@media (hover: none) and (pointer: coarse) {
+  /* Increase tap target sizes */
+  .btn-primary {
+    min-height: 48px;
+    padding: 14px 28px;
+  }
+
+  .btn-secondary,
+  .btn-tertiary {
+    min-height: 44px;
+    padding: 10px 0;
+  }
+
+  /* Nav link taps */
+  .nav-links a {
+    padding: 8px 4px;
+  }
+
+  /* Footer link taps */
+  .footer-nav-col a {
+    padding: 6px 0;
+    display: inline-block;
+  }
+
+  /* Cards — add subtle active feedback */
+  .card-practice:active .img-inner {
+    transform: scale(1.02);
+  }
+
+  /* Disable hover-dependent effects on touch */
+  .case-row:hover .case-row__content {
+    transform: none;
+  }
+
+  .cases-archive__list:hover .case-row:not(:hover) {
+    opacity: 1;
+  }
+
+  /* Hover effects on case cards are unnecessary on touch */
+  .case-card:hover .case-card__image img {
+    transform: none;
+    filter: brightness(0.55) saturate(0.85);
+  }
+
+  .case-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  /* Button hover states — use active instead */
+  .btn-primary:active {
+    background-color: var(--c-black);
+    color: var(--c-white);
+  }
+
+  .section--dark .btn-primary:active {
+    background-color: var(--c-white);
+    color: var(--c-black);
+  }
+}
+
+/* ══════════════════════════════════════════════
+   ─── LANDSCAPE MOBILE ───
+   ══════════════════════════════════════════════ */
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero-home {
+    min-height: 100svh;
+    padding-top: var(--gap-xl);
+    padding-bottom: var(--gap-lg);
+  }
+
+  .stacked-card {
+    min-height: 100svh;
+  }
+
+  .stacked-header {
+    min-height: 80svh;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   ─── iOS SAFE AREA (NOTCH) ───
+   ══════════════════════════════════════════════ */
+
+@supports (padding: env(safe-area-inset-top)) {
+  @media (max-width: 768px) {
+    #nav-island {
+      top: calc(12px + env(safe-area-inset-top));
+    }
+
+    .site-footer {
+      padding-bottom: calc(var(--gap-md) + env(safe-area-inset-bottom));
+    }
+  }
+}
+
+/* ══════════════════════════════════════════════
+   ─── SCROLL HINT MOBILE ───
+   ══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .scroll-hint {
+    bottom: 16px;
+  }
+
+  .scroll-hint__label {
+    font-size: 11px;
+  }
+
+  .scroll-hint__arrow {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   ─── FLOW FIELD MOBILE — reduce intensity ───
+   ══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .flow-field-bg canvas {
+    opacity: 0.5;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   ─── PRINT / ACCESSIBILITY ───
+   ══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  /* Ensure select elements are properly styled */
+  select.form-input,
+  .field-group select {
+    font-size: 16px; /* Prevents iOS auto-zoom */
+  }
+
+  /* Improve readability */
+  .body-text {
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+}

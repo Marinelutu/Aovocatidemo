@@ -26,43 +26,63 @@ function initPractici() {
   const pinSection = document.querySelector('.pin-section-practici');
   if (pinSection && !prefersReduced) {
     const listItems = pinSection.querySelectorAll('.scroll-list-item');
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
     
     if (listItems.length > 0) {
       // Initial state: hidden and slightly below for a "live" entrance
       gsap.set(listItems, { opacity: 0, y: 20 });
 
-      const tl = gsap.timeline({ paused: true });
+      if (isMobile) {
+        /* On mobile: simple staggered entrance without pinning */
+        ScrollTrigger.create({
+          trigger: pinSection,
+          start: 'top 80%',
+          once: true,
+          onEnter: () => {
+            gsap.to(listItems, {
+              opacity: 1,
+              y: 0,
+              duration: 0.6,
+              ease: 'power3.out',
+              stagger: 0.1,
+            });
+          },
+        });
+      } else {
+        /* On desktop: pinned scroll-triggered reveal */
+        const tl = gsap.timeline({ paused: true });
 
-      listItems.forEach((item) => {
-        // 1. Reveal Text: Opacity and Y-motion ONLY
-        tl.to(item, {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: 'power3.out'
+        listItems.forEach((item) => {
+          // 1. Reveal Text: Opacity and Y-motion ONLY
+          tl.to(item, {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: 'power3.out'
+          });
+
+          // 2. Pause before next item
+          tl.to({}, { duration: 0.5 });
         });
 
-        // 2. Pause before next item
-        tl.to({}, { duration: 0.5 });
-      });
+        let maxProgress = 0;
 
-      let maxProgress = 0;
-
-      ScrollTrigger.create({
-        trigger: pinSection,
-        start: 'top top',
-        end: `+=${listItems.length * 40}%`,
-        pin: true,
-        scrub: 1,
-        anticipatePin: 1,
-        onUpdate: (self) => {
-          // Strictly forward: once revealed, it never hides again
-          if (self.progress > maxProgress) {
-            maxProgress = self.progress;
+        ScrollTrigger.create({
+          trigger: pinSection,
+          start: 'top top',
+          end: `+=${listItems.length * 40}%`,
+          pin: true,
+          scrub: 1,
+          anticipatePin: 1,
+          onUpdate: (self) => {
+            // Strictly forward: once revealed, it never hides again
+            if (self.progress > maxProgress) {
+              maxProgress = self.progress;
+            }
+            tl.progress(maxProgress);
           }
-          tl.progress(maxProgress);
-        }
-      });
+        });
+      }
     }
   }
 

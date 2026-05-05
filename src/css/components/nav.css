@@ -117,6 +117,78 @@
   color: var(--c-white);
 }
 
+/* ─── Phone Icon ─── */
+.nav-phone {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.3s var(--ease-out);
+  text-decoration: none;
+}
+
+.nav-phone::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 40%, rgba(212, 175, 55, 0.18), transparent 70%);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  opacity: 0;
+  transition: opacity 0.35s var(--ease-out), transform 0.35s var(--ease-out);
+  transform: scale(0.85);
+}
+
+.nav-phone:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.nav-phone svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.35s var(--ease-out), filter 0.35s ease;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+.nav-phone:hover svg {
+  transform: rotate(8deg) scale(1.12);
+  filter: drop-shadow(0 2px 6px rgba(212, 175, 55, 0.5));
+}
+
+/* Tooltip */
+.nav-phone::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--c-black);
+  color: var(--c-white);
+  font-family: var(--f-body);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  padding: 5px 10px;
+  border-radius: 3px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.nav-phone:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
 /* ─── Auto-expand at footer ─── */
 #nav-island.is-expanded {
   padding: 14px 36px;
@@ -185,7 +257,8 @@
   }
 
   .nav-links,
-  .nav-cta {
+  .nav-cta,
+  .nav-phone {
     display: none;
   }
 
@@ -231,6 +304,13 @@
     justify-content: center;
     padding: 12px 24px;
     font-size: 14px;
+  }
+
+  #nav-island.is-menu-open .nav-phone {
+    display: inline-flex;
+    order: 5;
+    width: auto;
+    margin-top: 4px;
   }
 }
 

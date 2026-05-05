@@ -118,8 +118,60 @@ function initConsultatie() {
         el.addEventListener('click', (e) => {
           selectedTime = e.target.dataset.time;
           renderCalendar();
+          updateFormState(); // Trigger form visibility & enable logic
         });
       });
+      
+      updateFormState(); // Trigger on initial render and date change
+    }
+    
+    // Form state logic
+    const formContainer = document.getElementById('booking-form-container');
+    const formTitle = document.getElementById('form-dynamic-title');
+    const formDesc = document.getElementById('form-dynamic-desc');
+    const callbackForm = document.getElementById('callback-form');
+    
+    function updateFormState() {
+      const isComplete = selectedDate && selectedTime;
+      
+      if (callbackForm) {
+        const inputs = callbackForm.querySelectorAll('input, select, button[type="submit"]');
+        inputs.forEach(input => {
+          input.disabled = !isComplete;
+          if (!isComplete) {
+            input.style.opacity = '0.5';
+            input.style.cursor = 'not-allowed';
+          } else {
+            input.style.opacity = '1';
+            input.style.cursor = '';
+          }
+        });
+      }
+      
+      if (formTitle && formDesc) {
+        if (isComplete) {
+          formTitle.innerHTML = 'Finalizare Programare';
+          formDesc.innerHTML = `Ați selectat <strong>${selectedDate.toLocaleDateString('ro-RO')}</strong> la ora <strong>${selectedTime}</strong>. Vă rugăm să completați datele de mai jos.`;
+          formTitle.style.color = '';
+          
+          if (formContainer && formContainer.classList.contains('mobile-hidden')) {
+            formContainer.classList.remove('mobile-hidden');
+            if (window.innerWidth <= 768) {
+              setTimeout(() => {
+                formContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }, 100);
+            }
+          }
+        } else {
+          formTitle.innerHTML = 'Selectați Data și Ora';
+          formDesc.innerHTML = 'Vă rugăm să alegeți o dată și o oră din calendarul alăturat pentru a putea completa formularul.';
+          formTitle.style.color = 'var(--c-text-muted)';
+          
+          if (formContainer && window.innerWidth <= 768) {
+             formContainer.classList.add('mobile-hidden');
+          }
+        }
+      }
     }
     
     const style = document.createElement('style');
@@ -183,6 +235,11 @@ function initConsultatie() {
       }
       .btn-prev:hover, .btn-next:hover {
         opacity: 0.6;
+      }
+      @media (max-width: 768px) {
+        .mobile-hidden {
+          display: none !important;
+        }
       }
     `;
     document.head.appendChild(style);

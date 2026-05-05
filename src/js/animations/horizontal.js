@@ -28,6 +28,10 @@ const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').mat
 export function initHorizontalScroll() {
   if (prefersReduced) return;
 
+  /* On mobile, use native horizontal touch scroll (handled by CSS) */
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  if (isMobile) return;
+
   const sections = document.querySelectorAll('.h-scroll-section');
 
   sections.forEach((section) => {

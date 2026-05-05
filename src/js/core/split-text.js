@@ -19,7 +19,11 @@
 export function splitLines(el) {
   if (!el) return [];
 
-  const text = el.textContent.trim();
+  // Replace <br> with space to prevent word merging, then get text content
+  const temp = document.createElement('div');
+  temp.innerHTML = el.innerHTML.replace(/<br\s*\/?>/gi, ' ');
+  const text = temp.textContent.trim();
+  
   if (!text) return [];
 
   const words = text.split(/\s+/);

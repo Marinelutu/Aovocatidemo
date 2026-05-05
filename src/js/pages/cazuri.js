@@ -20,15 +20,16 @@ function initCazuri() {
   if (prefersReduced) return;
 
   const cards = document.querySelectorAll('.case-card');
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
   /* ─── Staggered entrance animation ─── */
   gsap.from(cards, {
-    y: 60,
+    y: 40,
     opacity: 0,
-    scale: 0.95,
-    duration: 0.9,
+    scale: 0.97,
+    duration: 0.7,
     ease: 'power3.out',
-    stagger: 0.12,
+    stagger: 0.1,
     scrollTrigger: {
       trigger: '.h-scroll-section',
       start: 'top 85%',
@@ -36,52 +37,54 @@ function initCazuri() {
     },
   });
 
-  /* ─── Image parallax within horizontal scroll ─── */
-  const section = document.querySelector('.h-scroll-section');
-  const track = document.querySelector('.h-scroll-track');
+  /* ─── Image parallax within horizontal scroll (desktop only) ─── */
+  if (!isMobile) {
+    const section = document.querySelector('.h-scroll-section');
+    const track = document.querySelector('.h-scroll-track');
 
-  if (section && track) {
+    if (section && track) {
+      cards.forEach((card) => {
+        const img = card.querySelector('.case-card__image img');
+        if (!img) return;
+
+        /* Create a subtle parallax: image moves slower than the card scroll */
+        gsap.fromTo(
+          img,
+          { x: -30 },
+          {
+            x: 30,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: section,
+              start: 'top top',
+              end: 'bottom top',
+              scrub: 1,
+            },
+          }
+        );
+      });
+    }
+
+    /* ─── Card hover scale + shadow (desktop only) ─── */
     cards.forEach((card) => {
-      const img = card.querySelector('.case-card__image img');
-      if (!img) return;
-
-      /* Create a subtle parallax: image moves slower than the card scroll */
-      gsap.fromTo(
-        img,
-        { x: -30 },
-        {
-          x: 30,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: section,
-            start: 'top top',
-            end: 'bottom top',
-            scrub: 1,
-          },
-        }
+      card.addEventListener('mouseenter', () =>
+        gsap.to(card, {
+          scale: 1.02,
+          duration: 0.5,
+          ease: 'power3.out',
+          overwrite: 'auto',
+        })
+      );
+      card.addEventListener('mouseleave', () =>
+        gsap.to(card, {
+          scale: 1,
+          duration: 0.5,
+          ease: 'power3.out',
+          overwrite: 'auto',
+        })
       );
     });
   }
-
-  /* ─── Card hover scale + shadow ─── */
-  cards.forEach((card) => {
-    card.addEventListener('mouseenter', () =>
-      gsap.to(card, {
-        scale: 1.02,
-        duration: 0.5,
-        ease: 'power3.out',
-        overwrite: 'auto',
-      })
-    );
-    card.addEventListener('mouseleave', () =>
-      gsap.to(card, {
-        scale: 1,
-        duration: 0.5,
-        ease: 'power3.out',
-        overwrite: 'auto',
-      })
-    );
-  });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
