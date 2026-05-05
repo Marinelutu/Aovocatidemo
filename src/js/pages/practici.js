@@ -11,6 +11,7 @@ import { initTextReveal } from '../animations/text-reveal.js';
 import { initImageMask } from '../animations/image-mask.js';
 import { initStickyPin } from '../animations/sticky-pin.js';
 import { initCounters } from '../animations/counters.js';
+import { initCasesPreview } from '../components/cases-preview.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -68,6 +69,9 @@ function initPractici() {
   /* ─── Stacked Cards: Cinematic Scroll ─── */
   initStackedCards();
 
+  /* ─── Cases Preview: Cinematic Archive ─── */
+  initCasesPreview();
+
   /* ─── Floating Assets Parallax ─── */
   if (!prefersReduced) {
     const assets = document.querySelectorAll('.float-asset');
@@ -119,7 +123,7 @@ function initStackedCards() {
     if (bgImg) {
       tl.fromTo(bgImg,
         { scale: 1.15 },
-        { scale: 1, duration: 1.5, ease: 'power2.out' },
+        { scale: 1, duration: 0.8, ease: 'power2.out' },
         0
       );
     }
@@ -127,9 +131,9 @@ function initStackedCards() {
     // Label: fade in and slide up
     if (label) {
       tl.fromTo(label,
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' },
-        0.2
+        { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: 0.4, ease: 'power3.out' },
+        0.05
       );
     }
 
@@ -137,33 +141,33 @@ function initStackedCards() {
     if (divider) {
       tl.fromTo(divider,
         { opacity: 0, scaleX: 0 },
-        { opacity: 0.6, scaleX: 1, duration: 0.8, ease: 'power3.out' },
-        0.3
+        { opacity: 0.6, scaleX: 1, duration: 0.4, ease: 'power3.out' },
+        0.1
       );
     }
 
     // Title: blur-to-clear + fade-in-up (the hero animation)
     if (title) {
       tl.fromTo(title,
-        { opacity: 0, filter: 'blur(12px)', y: 30 },
-        { opacity: 1, filter: 'blur(0px)', y: 0, duration: 1.2, ease: 'power3.out' },
-        0.35
+        { opacity: 0, filter: 'blur(8px)', y: 16 },
+        { opacity: 1, filter: 'blur(0px)', y: 0, duration: 0.6, ease: 'power3.out' },
+        0.12
       );
     }
 
     // Detail: fade-in-up
     if (detail) {
       tl.fromTo(detail,
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' },
-        0.6
+        { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: 0.4, ease: 'power3.out' },
+        0.2
       );
     }
 
     // Create ScrollTrigger for each card
     ScrollTrigger.create({
       trigger: card,
-      start: 'top 60%',
+      start: 'top 70%',
       end: 'center center',
       onEnter: () => {
         card.classList.add('is-active');

@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="/src/css/components/buttons.css">
   <link rel="stylesheet" href="/src/css/components/cards.css">
   <link rel="stylesheet" href="/src/css/components/stacked-cards.css">
+  <link rel="stylesheet" href="/src/css/components/cases-preview.css">
   <link rel="stylesheet" href="/src/css/pages/practici.css">
 </head>
 <body data-page="munca">
@@ -162,22 +163,67 @@
 
     </div>
 
-    <!-- [S5] Relevant cases -->
-    <section class="section">
+    <!-- [S5] Cinematic Cases Archive -->
+    <section class="section cases-archive py-xxl">
       <div class="container">
-        <div class="label-small reveal-text cases-section-title">CAZURI RELEVANTE</div>
-        <div class="cases-list">
-          <div class="case-brief reveal-text">
-            <h3 class="h-3">Concediere colectivă — 47 angajați, zero litigii</h3>
-          </div>
-          <div class="case-brief reveal-text">
-            <h3 class="h-3">Câștig litigiu muncă — angajator vs. fost director</h3>
-          </div>
-          <div class="case-brief reveal-text">
-            <h3 class="h-3">Implementare politici GDPR pentru 3 companii</h3>
-          </div>
+        <div class="cases-archive__header">
+          <div class="label-small reveal-text">CAZURI RELEVANTE</div>
+          <span class="cases-archive__count reveal-text">03</span>
         </div>
-      </div>
+
+        <div class="cases-archive__list">
+          <a href="/cazuri/concediere-colectiva.html" class="case-row" data-cursor>
+            <span class="case-row__index">01</span>
+            <div class="case-row__content">
+              <h3 class="case-row__title">Concediere colectivă — 47 angajați, zero litigii</h3>
+              <div class="case-row__meta">
+                <span class="case-row__year">2023</span>
+                <span class="case-row__outcome">Procedură conformă · Zero contestații</span>
+              </div>
+            </div>
+            <div class="case-row__arrow">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="case-row__line"></div>
+          </a>
+
+          <a href="/cazuri.html" class="case-row" data-cursor>
+            <span class="case-row__index">02</span>
+            <div class="case-row__content">
+              <h3 class="case-row__title">Câștig litigiu muncă — angajator vs. fost director</h3>
+              <div class="case-row__meta">
+                <span class="case-row__year">2023</span>
+                <span class="case-row__outcome">Decizie favorabilă în 4 luni</span>
+              </div>
+            </div>
+            <div class="case-row__arrow">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="case-row__line"></div>
+          </a>
+
+          <a href="/cazuri.html" class="case-row" data-cursor>
+            <span class="case-row__index">03</span>
+            <div class="case-row__content">
+              <h3 class="case-row__title">Implementare politici GDPR pentru 3 companii</h3>
+              <div class="case-row__meta">
+                <span class="case-row__year">2022</span>
+                <span class="case-row__outcome">Regulamente complete · Zero sancțiuni ANSPDCP</span>
+              </div>
+            </div>
+            <div class="case-row__arrow">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="case-row__line"></div>
+          </a>
+        </div>
+
+        <div class="cases-archive__footer">
+          <a href="/cazuri.html" class="cases-archive__link" data-cursor>
+            Vezi toate cazurile
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
     </section>
 
     <!-- [S6] CTA -->

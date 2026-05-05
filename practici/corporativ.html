@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="/src/css/components/buttons.css">
   <link rel="stylesheet" href="/src/css/components/cards.css">
   <link rel="stylesheet" href="/src/css/components/stacked-cards.css">
+  <link rel="stylesheet" href="/src/css/components/cases-preview.css">
   <link rel="stylesheet" href="/src/css/pages/practici.css">
 </head>
 <body data-page="corporativ">
@@ -162,25 +163,52 @@
 
     </div>
 
-    <!-- [S5] Relevant cases -->
-    <section class="section cases-preview py-xxl">
+    <!-- [S5] Cinematic Cases Archive -->
+    <section class="section cases-archive py-xxl">
       <div class="container">
-        <div class="label-small reveal-text mb-lg">CAZURI RELEVANTE</div>
-        <div class="cases-roadmap-list">
-          <a href="/cazuri/restructurare-grup.html" class="case-roadmap-item reveal-text" data-cursor>
-            <div class="case-roadmap-info">
-              <h3 class="h-2">Restructurarea unui grup de 12 societăți</h3>
-              <p class="body-text text-muted mt-xs">Vezi parcursul juridic &rarr;</p>
+        <div class="cases-archive__header">
+          <div class="label-small reveal-text">CAZURI RELEVANTE</div>
+          <span class="cases-archive__count reveal-text">02</span>
+        </div>
+
+        <div class="cases-archive__list">
+          <a href="/cazuri/restructurare-grup.html" class="case-row" data-cursor>
+            <span class="case-row__index">01</span>
+            <div class="case-row__content">
+              <h3 class="case-row__title">Restructurarea unui grup de 12 societăți</h3>
+              <div class="case-row__meta">
+                <span class="case-row__year">2024</span>
+                <span class="case-row__outcome">3 luni · Zero litigii · 100% conformitate</span>
+              </div>
             </div>
+            <div class="case-row__arrow">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="case-row__line"></div>
           </a>
-          <a href="/cazuri.html" class="case-roadmap-item reveal-text" data-cursor>
-            <div class="case-roadmap-info">
-              <h3 class="h-2">Negocierea unui contract de distribuție de 4M €</h3>
-              <p class="body-text text-muted mt-xs">Vezi detalii &rarr;</p>
+
+          <a href="/cazuri/negociere-contract-distributie.html" class="case-row" data-cursor>
+            <span class="case-row__index">02</span>
+            <div class="case-row__content">
+              <h3 class="case-row__title">Contract de distribuție exclusivă 4M €</h3>
+              <div class="case-row__meta">
+                <span class="case-row__year">2023</span>
+                <span class="case-row__outcome">Negociat în 6 săptămâni · 3 piețe internaționale</span>
+              </div>
             </div>
+            <div class="case-row__arrow">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="case-row__line"></div>
           </a>
         </div>
-      </div>
+
+        <div class="cases-archive__footer">
+          <a href="/cazuri.html" class="cases-archive__link" data-cursor>
+            Vezi toate cazurile
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
     </section>
 
     <!-- [S6] CTA -->

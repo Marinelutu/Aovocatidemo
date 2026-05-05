@@ -1,0 +1,268 @@
+/* ─── Cases Preview: Cinematic Archive ─── */
+/* Premium hover-reveal case list for practice pages */
+
+.cases-archive {
+  position: relative;
+  overflow: hidden;
+}
+
+.cases-archive .container {
+  position: relative;
+}
+
+/* ─── Section Header ─── */
+.cases-archive__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--gap-lg);
+  padding-bottom: var(--gap-md);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.cases-archive__count {
+  font-family: var(--f-display);
+  font-size: var(--t-h2);
+  font-weight: 300;
+  color: var(--c-mist);
+  letter-spacing: var(--ls-heading);
+  line-height: 1;
+}
+
+/* ─── Case Row ─── */
+.cases-archive__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.case-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--gap-lg);
+  padding: var(--gap-lg) 0;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid var(--c-border);
+  cursor: pointer;
+  transition: border-color 0.6s var(--ease-out);
+}
+
+.case-row:first-child {
+  border-top: 1px solid var(--c-border);
+}
+
+/* ─── Row Index Number ─── */
+.case-row__index {
+  font-family: var(--f-display);
+  font-size: clamp(14px, 1.2vw, 18px);
+  font-weight: 300;
+  color: var(--c-mist);
+  opacity: 0.5;
+  min-width: 32px;
+  transition: opacity 0.4s var(--ease-out), color 0.4s var(--ease-out);
+}
+
+/* ─── Row Content ─── */
+.case-row__content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: transform 0.6s var(--ease-out);
+}
+
+.case-row__title {
+  font-family: var(--f-display);
+  font-size: var(--t-h3);
+  font-weight: 400;
+  letter-spacing: var(--ls-heading);
+  line-height: var(--lh-heading);
+  transition: color 0.4s var(--ease-out);
+}
+
+.case-row__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-md);
+}
+
+.case-row__year {
+  font-family: var(--f-body);
+  font-size: var(--t-small);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--c-stone);
+  transition: color 0.4s var(--ease-out);
+}
+
+.case-row__outcome {
+  font-family: var(--f-display);
+  font-size: var(--t-sub);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--c-stone);
+  transition: color 0.4s var(--ease-out);
+}
+
+/* ─── Row Arrow ─── */
+.case-row__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--c-border);
+  transition: all 0.5s var(--ease-out);
+  flex-shrink: 0;
+}
+
+.case-row__arrow svg {
+  width: 18px;
+  height: 18px;
+  color: var(--c-stone);
+  transition: color 0.4s var(--ease-out), transform 0.4s var(--ease-out);
+}
+
+/* ─── Line Drawing Animation ─── */
+.case-row__line {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--c-black);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.8s var(--ease-out);
+  z-index: 2;
+}
+
+/* ─── Hover Effects ─── */
+.case-row:hover {
+  border-bottom-color: transparent;
+}
+
+.case-row:hover .case-row__line {
+  transform: scaleX(1);
+}
+
+.case-row:hover .case-row__index {
+  opacity: 1;
+  color: var(--c-black);
+}
+
+.case-row:hover .case-row__content {
+  transform: translateX(12px);
+}
+
+.case-row:hover .case-row__title {
+  color: var(--c-black);
+}
+
+.case-row:hover .case-row__year,
+.case-row:hover .case-row__outcome {
+  color: var(--c-stone);
+}
+
+.case-row:hover .case-row__arrow {
+  border-color: var(--c-black);
+  background: var(--c-black);
+}
+
+.case-row:hover .case-row__arrow svg {
+  color: var(--c-white);
+  transform: translateX(2px);
+}
+
+/* ─── Sibling Dimming ─── */
+.cases-archive__list:hover .case-row:not(:hover) {
+  opacity: 0.35;
+  transition: opacity 0.5s var(--ease-out);
+}
+
+.cases-archive__list:hover .case-row:hover {
+  opacity: 1;
+}
+
+.case-row {
+  transition: border-color 0.6s var(--ease-out), opacity 0.5s var(--ease-out);
+}
+
+
+/* ─── "Vezi toate cazurile" link ─── */
+.cases-archive__footer {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--gap-xl);
+}
+
+.cases-archive__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gap-sm);
+  font-family: var(--f-body);
+  font-size: var(--t-small);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--c-stone);
+  padding: var(--gap-sm) var(--gap-md);
+  border: 1px solid var(--c-border);
+  border-radius: 100px;
+  transition: all 0.4s var(--ease-out);
+}
+
+.cases-archive__link:hover {
+  color: var(--c-black);
+  border-color: var(--c-black);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.cases-archive__link svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.4s var(--ease-out);
+}
+
+.cases-archive__link:hover svg {
+  transform: translateX(4px);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .case-row {
+    grid-template-columns: 1fr auto;
+    gap: var(--gap-sm);
+    padding: var(--gap-md) 0;
+  }
+
+  .case-row__index {
+    display: none;
+  }
+
+  .case-row:hover .case-row__content {
+    transform: translateX(0);
+  }
+
+  .case-row__arrow {
+    width: 36px;
+    height: 36px;
+  }
+
+  .case-row__arrow svg {
+    width: 14px;
+    height: 14px;
+  }
+
+
+  .cases-archive__header {
+    flex-direction: column;
+    gap: var(--gap-xs);
+  }
+
+  .cases-archive__list:hover .case-row:not(:hover) {
+    opacity: 1;
+  }
+}

@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="/src/css/components/buttons.css">
   <link rel="stylesheet" href="/src/css/components/cards.css">
   <link rel="stylesheet" href="/src/css/components/stacked-cards.css">
+  <link rel="stylesheet" href="/src/css/components/cases-preview.css">
   <link rel="stylesheet" href="/src/css/pages/practici.css">
 </head>
 <body data-page="imobiliar">
@@ -162,22 +163,67 @@
 
     </div>
 
-    <!-- [S5] Relevant cases -->
-    <section class="section">
+    <!-- [S5] Cinematic Cases Archive -->
+    <section class="section cases-archive py-xxl">
       <div class="container">
-        <div class="label-small reveal-text cases-section-title">CAZURI RELEVANTE</div>
-        <div class="cases-list">
-          <div class="case-brief reveal-text">
-            <h3 class="h-3">Due diligence complex — 3 imobile industriale</h3>
-          </div>
-          <div class="case-brief reveal-text">
-            <h3 class="h-3">Litigiu privind vicii ascunse, valoare 1.2M €</h3>
-          </div>
-          <div class="case-brief reveal-text">
-            <h3 class="h-3">Structurare juridică ansamblu rezidențial</h3>
-          </div>
+        <div class="cases-archive__header">
+          <div class="label-small reveal-text">CAZURI RELEVANTE</div>
+          <span class="cases-archive__count reveal-text">03</span>
         </div>
-      </div>
+
+        <div class="cases-archive__list">
+          <a href="/cazuri/due-diligence-complex.html" class="case-row" data-cursor>
+            <span class="case-row__index">01</span>
+            <div class="case-row__content">
+              <h3 class="case-row__title">Due diligence complex — 3 imobile industriale</h3>
+              <div class="case-row__meta">
+                <span class="case-row__year">2024</span>
+                <span class="case-row__outcome">14 titluri verificate · 4 riscuri eliminate</span>
+              </div>
+            </div>
+            <div class="case-row__arrow">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="case-row__line"></div>
+          </a>
+
+          <a href="/cazuri.html" class="case-row" data-cursor>
+            <span class="case-row__index">02</span>
+            <div class="case-row__content">
+              <h3 class="case-row__title">Litigiu privind vicii ascunse, valoare 1.2M €</h3>
+              <div class="case-row__meta">
+                <span class="case-row__year">2022</span>
+                <span class="case-row__outcome">Câștig în primă instanță · Confirmat în apel</span>
+              </div>
+            </div>
+            <div class="case-row__arrow">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="case-row__line"></div>
+          </a>
+
+          <a href="/cazuri.html" class="case-row" data-cursor>
+            <span class="case-row__index">03</span>
+            <div class="case-row__content">
+              <h3 class="case-row__title">Structurare juridică ansamblu rezidențial</h3>
+              <div class="case-row__meta">
+                <span class="case-row__year">2023</span>
+                <span class="case-row__outcome">Documentație completă · Avize obținute</span>
+              </div>
+            </div>
+            <div class="case-row__arrow">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="case-row__line"></div>
+          </a>
+        </div>
+
+        <div class="cases-archive__footer">
+          <a href="/cazuri.html" class="cases-archive__link" data-cursor>
+            Vezi toate cazurile
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
     </section>
 
     <!-- [S6] CTA -->
